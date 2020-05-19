@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>loaDay</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="main.js"></script>
+  </head>
+
+  <body onload=getDate()>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#">
+        <img src="../media/logo.png" class="d-inline-block align-top logo" width="110px" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+        aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExample05">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Deadlines</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-lg">
+      <h3 id="date"></h3>
+        <div class="align-content">
+          <progress id="bar" value="70" max="100"></progress>
+          <label class="bar-text" for="bar">70%</label>
+        </div>
+
+      <div class="container task-section">
+        <p class="bg-primary text-white section-title">TODAY</p>
+        <ul class="list-group">
+          <li class="list-group-item task">
+            <input type="checkbox" id="task1" class="task-cb">
+            <div class="text-justify text-break task-cb-label" for="task1">Task 1</div>
+          </li>
+          <li class="list-group-item task">
+            <input type="checkbox" id="task2" class="task-cb">
+            <div class="text-justify text-break task-cb-label" for="task2">Task 2</div>
+          </li>
+        </ul>
+
+        <p class="bg-secondary text-white section-title">TOMORROW</p>
+        <ul class="list-group">
+          <li class="list-group-item task">
+            <input type="checkbox" id="task1" class="task-cb">
+            <div class="text-justify text-break task-cb-label" for="task1">
+              Task 1 di domani</div>
+          </li>
+          <li class="list-group-item task">
+            <input type="checkbox" id="task2" class="task-cb">
+            <div class="text-justify text-break task-cb-label" for="task2">Task 2 di domani</div>
+          </li>
+        </ul>
+
+        <p class="bg-dark text-white section-title">SOMEDAY</p>
+        <ul class="list-group">
+          <li class="list-group-item task">
+            <input type="checkbox" id="task1" class="task-cb">
+            <div class="text-justify text-break task-cb-label" for="task1">
+              Task 1 a na certa</div>
+          </li>
+          <li class="list-group-item task">
+            <input type="checkbox" id="task2" class="task-cb">
+            <div class="text-justify text-break task-cb-label" for="task2">Task 2 boh</div>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </body>
+</html>

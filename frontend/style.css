@@ -1,0 +1,54 @@
+progress {
+  margin-top: 25px;
+  border-radius: .9em; 
+  width: 80%;
+  height: 45px;
+}
+progress::-webkit-progress-bar {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(124, 116, 132, 0.753);
+  background-color: rgb(255, 255, 255);
+  border-radius: .9em;
+}
+progress::-webkit-progress-value {
+  border-radius: .7em; 
+  background-color: rgba(124, 116, 132, 0.753);
+}
+
+.bar-text {
+  font-size: xx-large;
+  color: grey;
+  font-weight: 500;
+  margin-left: 25px;
+  position: absolute;
+  margin-top: 20px;
+}
+
+.task-section {
+  max-width: 750px;
+  padding-left: 0px;
+  padding-right: 30px;
+  position: absolute;
+}
+
+.section-title {
+  margin-top: 35px;
+  padding-left: 15px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.task-cb {
+  float: left; 
+  margin-top: 5px;
+}
+
+.task-cb-label {
+  margin-left: 25px;
+}
+
+.logo {
+  padding-left: 15px;
+  padding-top: 15px;
+}
