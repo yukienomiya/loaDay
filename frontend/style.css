@@ -1,39 +1,29 @@
 progress {
-  margin-top: 25px;
+  margin-top: 10px;
   border-radius: .9em; 
-  width: 80%;
+  width: 70%;
   height: 45px;
 }
 progress::-webkit-progress-bar {
   border-style: solid;
   border-width: 1px;
-  border-color: rgba(124, 116, 132, 0.753);
+  border-color: #707070;
   background-color: rgb(255, 255, 255);
   border-radius: .9em;
 }
 progress::-webkit-progress-value {
   border-radius: .7em; 
-  background-color: rgba(124, 116, 132, 0.753);
+  background-color: rgba(82, 77, 242, 0.48);
 }
 
 .bar-text {
-  font-size: xx-large;
   color: grey;
   font-weight: 500;
-  margin-left: 25px;
-  position: absolute;
-  margin-top: 20px;
-}
-
-.task-section {
-  max-width: 750px;
-  padding-left: 0px;
-  padding-right: 30px;
-  position: absolute;
+  padding-top: 13px;
 }
 
 .section-title {
-  margin-top: 35px;
+  margin-top: 40px;
   padding-left: 15px;
   font-weight: 500;
   margin-bottom: 10px;
@@ -51,4 +41,41 @@ progress::-webkit-progress-value {
 .logo {
   padding-left: 15px;
   padding-top: 15px;
+}
+
+.bg-grey {
+  background-color: #707070;
+}
+
+.deadline-section {
+  margin-top: 40px;
+}
+
+.deadline {
+  display:flex;
+  width: 250px;
+  height: 60px;
+  border-color: rgb(189, 140, 204);
+  border-radius: 1.75em;
+  border-style: solid;
+  border-width: 1.5px;
+  margin-bottom: 20px;
+}
+
+.deadline-time {
+  font-weight: 600;
+  font-size: large;
+  margin-bottom: 0px;
+  color: #2e2e2e;
+}
+
+.deadline-text {
+  overflow: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #707070;
+}
+
+.text-grey {
+  color: #707070;
 }
