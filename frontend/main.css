@@ -10872,4 +10872,9 @@ body {
   padding-top: 0px;
   padding-bottom: 0px;
 }
+
+.nav-item {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 /*# sourceMappingURL=main.css.map */

@@ -12,13 +12,14 @@
       $(function () {
         $("#navbar").load("components/navbar.html");
         $("#deadlines").load("components/deadlines.html")
+        $("#footer").load("components/footer.html");
       });
     </script>
   </head>
 
   <body onload=getDate()>
     <div id="navbar"></div>
-    <div class="container">
+    <div class="container content">
 
       <h2 id="date"></h2>
       <div class="row">
@@ -27,7 +28,7 @@
       </div>
 
       <div class="row">
-        <div class="col-md-8 col-sm-12">
+        <div class="col-lg-8 col-sm-12">
           <div>
             <p class="bg-primary text-white section-title">TODAY</p>
             <ul class="list-group">
@@ -69,11 +70,12 @@
           </div>
         </div>
 
-        <div class="col-md-4 col-sm-12">
+        <div class="col-lg-4 col-md-12">
           <div id="deadlines"></div>
         </div>
 
       </div>
     </div>
+    <div id="footer"></div>
   </body>
 </html>
