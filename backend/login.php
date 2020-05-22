@@ -1,31 +1,24 @@
 <?php
-    $email = $_POST['email'];
-    $pass = $_POST['pass'];
+    session_start();
+    require_once('connection.php');
 
-    $servername = "localhost";
-    $username = "loaday";
-    $password = "";
-    $db = "my_loaday";
+    if(isset($_POST['login']))
+    {
+        $email = $_POST['email'];
+        $pass = $_POST['pass'];
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $db);
-
-    // Check connection
-    if(!$conn) {
-        die("Connection failed: " . $conn->connect_error);
+        $sql = "SELECT nome, cognome FROM users WHERE email = '$email' AND pass = '$pass'";
+        $result = mysqli_query($conn, $sql);
+    
+        if (mysqli_num_rows($result)) {
+            $_SESSION['active'] = 1;
+            header("location: ../frontend/home.php");
+        } else
+            header("location: ../frontend/login.php?message= Username o password errati! Riprovare");
     }
-
-    $sql = "SELECT nome, cognome FROM users WHERE email = '$email' AND pass = '$pass'";
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-        while($row = mysqli_fetch_assoc($result)) {
-            echo "Nome: " . $row["nome"]. " Cognome: " . $row["cognome"]. "<br>";
-        }
-        header("location: ../frontend/home.html");
-    } else {
-        echo "ERRORE AUTENTICAZIONE";
+    else
+    {
+        header('HTTP/1.1 401 Unauthorized');
     }
 
     mysqli_close($conn);
