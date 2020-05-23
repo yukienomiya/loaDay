@@ -7,7 +7,7 @@ progress {
 progress::-webkit-progress-bar {
   border-style: solid;
   border-width: 1px;
-  border-color: #707070;
+  border-color: rgba(82, 77, 242, 0.48);
   background-color: rgb(255, 255, 255);
   border-radius: .9em;
 }
@@ -23,10 +23,13 @@ progress::-webkit-progress-value {
 }
 
 .section-title {
-  margin-top: 40px;
   padding-left: 15px;
   font-weight: 500;
   margin-bottom: 10px;
+}
+
+.section-content {
+  margin-bottom: 20px;
 }
 
 .task-cb {
@@ -47,8 +50,12 @@ progress::-webkit-progress-value {
   background-color: #707070;
 }
 
-.deadline-section {
-  margin-top: 40px;
+.sections {
+  margin-top: 20px;
+}
+
+.first-section {
+  margin-top: 50px;
 }
 
 .deadline {
@@ -59,6 +66,38 @@ progress::-webkit-progress-value {
   border-radius: 1.75em;
   border-style: solid;
   border-width: 1.5px;
+  margin-bottom: 20px;
+}
+
+.deadline-add {
+  display:flex;
+  width: 250px;
+  height: 60px;
+  border-color: rgb(189, 140, 204);
+  border-radius: 1.75em;
+  border-style: solid;
+  border-width: 1.5px;
+  margin-bottom: 20px;
+  background-color: rgb(189, 140, 204);
+  align-items: center;
+  color: white;
+  font-weight: 600;
+}
+
+.deadline-add:hover {
+  border-color: rgb(129, 96, 139);
+  background-color: rgb(129, 96, 139);
+  color: white;
+}
+
+.deadline-add:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0rem;
+          box-shadow: 0 0 0 0rem;
+}
+
+.deadline-add-fields {
+  margin-top: 5px;
   margin-bottom: 20px;
 }
 
@@ -76,22 +115,42 @@ progress::-webkit-progress-value {
   color: #707070;
 }
 
+.deadline-btn {
+  display : none;
+  background-color: white;
+  border-color: white;
+  color: #555555;
+  font-weight: 500;
+  align-self: center;
+}
+
 .text-grey {
   color: #707070;
 }
 
 .footer {
   height: 80px;
-  padding-top: 5px;
+  padding-top: 30px;
   margin-top: 30px;
   padding-left: 10px;
   padding-right: 10px;
 }
 
 .content {
-  margin-bottom: 100px;
+  margin-bottom: 200px;
+  margin-top: 25px;
 }
 
 .bg-lightgrey {
   background-color: #E7E7E7;
+}
+
+.bg-lilac {
+  background-color: rgb(189, 140, 204);
+  color: white;
+}
+
+.not-rounded {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }

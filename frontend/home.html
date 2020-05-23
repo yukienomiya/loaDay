@@ -5,13 +5,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
+
+    <script type="text/javascript" src="node_modules/moment/min/moment-with-locales.min.js"></script>
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <script>
       $(function () {
         $("#navbar").load("components/navbar.html");
-        $("#deadlines").load("components/deadlines.html")
+        $("#deadlines").load("components/deadlines.html");
         $("#footer").load("components/footer.html");
       });
     </script>
@@ -23,18 +30,39 @@
 
       <h2 id="date"></h2>
       <div class="row">
-        <progress id="bar" value="70" max="100" class="col-10"></progress>
-        <h2 class="col-2 bar-text">70%</h2>
+        <progress id="bar" value="23" max="100" class="col-lg-11 col-md-12"></progress>
+        <h2 class="col-lg-1 d-none d-lg-block bar-text">23%</h2>
       </div>
 
       <div class="row">
-        <div class="col-lg-8 col-sm-12">
+        <div class="col-lg-8 col-sm-12 first-section">
+          <div class="input-group">
+            <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+            <div class="input-group-append">
+              <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split not-rounded" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Today</a>
+                <a class="dropdown-item" href="#">Tomorrow</a>
+                <a class="dropdown-item" href="#">Someday</a>
+              </div>
+              <button type="button" class="btn btn-outline-secondary">ADD</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 col-sm-12 sections">
           <div>
             <p class="bg-primary text-white section-title">TODAY</p>
-            <ul class="list-group">
+            <ul class="list-group section-content">
               <li class="list-group-item task">
                 <input type="checkbox" id="task1" class="task-cb">
-                <div class="text-justify text-break task-cb-label" for="task1">Task 1</div>
+                <div class="text-justify text-break task-cb-label" for="task1">
+                  Task 1</div>
               </li>
               <li class="list-group-item task">
                 <input type="checkbox" id="task2" class="task-cb">
@@ -43,7 +71,7 @@
             </ul>
 
             <p class="bg-secondary text-white section-title">TOMORROW</p>
-            <ul class="list-group">
+            <ul class="list-group section-content">
               <li class="list-group-item task">
                 <input type="checkbox" id="task1" class="task-cb">
                 <div class="text-justify text-break task-cb-label" for="task1">
@@ -56,7 +84,7 @@
             </ul>
 
             <p class="bg-grey text-white section-title">SOMEDAY</p>
-            <ul class="list-group">
+            <ul class="list-group section-content">
               <li class="list-group-item task">
                 <input type="checkbox" id="task1" class="task-cb">
                 <div class="text-justify text-break task-cb-label" for="task1">
