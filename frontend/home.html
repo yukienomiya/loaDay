@@ -35,64 +35,83 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-8 col-sm-12 first-section">
-          <div class="input-group">
-            <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
-            <div class="input-group-append">
-              <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split not-rounded" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <span class="sr-only">Toggle Dropdown</span>
-              </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Today</a>
-                <a class="dropdown-item" href="#">Tomorrow</a>
-                <a class="dropdown-item" href="#">Someday</a>
-              </div>
-              <button type="button" class="btn btn-outline-secondary">ADD</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
         <div class="col-lg-8 col-sm-12 sections">
           <div>
+            <form action="addTask.php" method="POST">
+              <div class="input-group first-section">
+                <input type="text" class="form-control" aria-label="Text input with segmented dropdown button"
+                  placeholder="Add new task">
+                <div class="input-group-append">
+                  <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split not-rounded"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Today</a>
+                    <a class="dropdown-item" href="#">Tomorrow</a>
+                    <a class="dropdown-item" href="#">Someday</a>
+                  </div>
+                  <button type="button" class="btn btn-outline-secondary">ADD</button>
+                </div>
+              </div>
+            </form>
             <p class="bg-primary text-white section-title">TODAY</p>
             <ul class="list-group section-content">
               <li class="list-group-item task">
-                <input type="checkbox" id="task1" class="task-cb">
-                <div class="text-justify text-break task-cb-label" for="task1">
-                  Task 1</div>
+                <div class="row task-content">
+                  <input type="checkbox" id="task1" class="task-cb">
+                  <div class="col-11 text-justify text-break task-cb-label" for="task1">
+                    Task 1</div>
+                  <button class="btn task-delete-btn"><i class="fa fa-times"></i></button>
+                </div>
               </li>
               <li class="list-group-item task">
-                <input type="checkbox" id="task2" class="task-cb">
-                <div class="text-justify text-break task-cb-label" for="task2">Task 2</div>
+                <div class="row task-content">
+                  <input type="checkbox" id="task2" class="task-cb">
+                  <div class="col-11 text-justify text-break task-cb-label" for="task2">
+                    Task 2</div>
+                  <button class="btn task-delete-btn"><i class="fa fa-times"></i></button>
+                </div>
               </li>
             </ul>
 
             <p class="bg-secondary text-white section-title">TOMORROW</p>
             <ul class="list-group section-content">
               <li class="list-group-item task">
-                <input type="checkbox" id="task1" class="task-cb">
-                <div class="text-justify text-break task-cb-label" for="task1">
-                  Task 1 di domani</div>
+                <div class="row task-content">
+                  <input type="checkbox" id="task1" class="task-cb">
+                  <div class="col-11 text-justify text-break task-cb-label" for="task1">
+                    Task 1 di domani</div>
+                  <button class="btn task-delete-btn"><i class="fa fa-times"></i></button>
+                </div>
               </li>
               <li class="list-group-item task">
-                <input type="checkbox" id="task2" class="task-cb">
-                <div class="text-justify text-break task-cb-label" for="task2">Task 2 di domani</div>
+                <div class="row task-content">
+                  <input type="checkbox" id="task2" class="task-cb">
+                  <div class="col-11 text-justify text-break task-cb-label" for="task2">
+                    Task 2 di domani</div>
+                  <button class="btn task-delete-btn"><i class="fa fa-times"></i></button>
+                </div>
               </li>
             </ul>
 
             <p class="bg-grey text-white section-title">SOMEDAY</p>
             <ul class="list-group section-content">
               <li class="list-group-item task">
-                <input type="checkbox" id="task1" class="task-cb">
-                <div class="text-justify text-break task-cb-label" for="task1">
-                  Task 1 a na certa</div>
+                <div class="row task-content">
+                  <input type="checkbox" id="task1" class="task-cb">
+                  <div class="col-11 text-justify text-break task-cb-label" for="task1">
+                    Task 1 boh</div>
+                  <button class="btn task-delete-btn"><i class="fa fa-times"></i></button>
+                </div>
               </li>
               <li class="list-group-item task">
-                <input type="checkbox" id="task2" class="task-cb">
-                <div class="text-justify text-break task-cb-label" for="task2">Task 2 boh</div>
+                <div class="row task-content">
+                  <input type="checkbox" id="task2" class="task-cb">
+                  <div class="col-11 text-justify text-break task-cb-label" for="task2">
+                    Task 2 di domani</div>
+                  <button class="btn task-delete-btn"><i class="fa fa-times"></i></button>
+                </div>
               </li>
             </ul>
           </div>

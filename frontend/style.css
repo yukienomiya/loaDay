@@ -32,13 +32,33 @@ progress::-webkit-progress-value {
   margin-bottom: 20px;
 }
 
+.task {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+.task-content {
+  align-items: center;
+  padding-left: 15px;
+}
+
 .task-cb {
-  float: left; 
-  margin-top: 5px;
+  float: left;
 }
 
 .task-cb-label {
-  margin-left: 25px;
+  margin-left: 0px;
+  padding-left: 20px;
+}
+
+.task-delete-btn {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  position: absolute;
+  right: 20px;
 }
 
 .logo {
@@ -51,11 +71,11 @@ progress::-webkit-progress-value {
 }
 
 .sections {
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .first-section {
-  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .deadline {

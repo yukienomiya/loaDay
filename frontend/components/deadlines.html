@@ -92,19 +92,22 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            <div class="input-group date deadline-add-fields" id="datetimepicker5" data-target-input="nearest">
-              <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker5" placeholder="Pick a date"/>
-              <div class="input-group-append" data-target="#datetimepicker5" data-toggle="datetimepicker">
-                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          <form action="addDeadline.php" method="POST">
+            <div class="modal-body">
+              <div class="input-group date deadline-add-fields" id="datetimepicker5" data-target-input="nearest">
+                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker5"
+                  placeholder="Pick a date" />
+                <div class="input-group-append" data-target="#datetimepicker5" data-toggle="datetimepicker">
+                  <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
               </div>
+              <input type="text" class="col-12 form-control deadline-add-fields" placeholder="Add a description">
             </div>
-            <input type="text" class="col-12 form-control deadline-add-fields" placeholder="Add a description">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn bg-lilac">Save changes</button>
-          </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn bg-lilac">Save changes</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

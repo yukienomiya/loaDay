@@ -31,3 +31,26 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.fa-times {
+  color: rgb(138, 138, 138);
+}
+
+.fa-plus {
+  color: rgb(0, 167, 0);
+}
+
+.btn:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.1rem rgba(128, 128, 128, 0.705);
+          box-shadow: 0 0 0 0.1rem rgba(128, 128, 128, 0.705);
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.1rem rgba(128, 128, 128, 0.705);
+          box-shadow: 0 0 0 0.1rem rgba(128, 128, 128, 0.705);
+}
