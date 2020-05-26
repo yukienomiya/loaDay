@@ -8,18 +8,18 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     
     <body>
-        <div style="text-align: center">    <!--centra l'immagine nella pagina rispetto ai bordi-->
+        <div class="middle">    <!--centra l'immagine nella pagina rispetto ai bordi-->
             <img src="../loaDayImage.jpg" alt="Logo di loaDay" hspace="20">
         </div>
         <div class="container-md themed-container"> <!--crea un "contenitore" per la pagina-->
-            <h3>Benvenuto, inserisci i tuoi dati per effettuare la registrazione!</h3>
-            <br>
+            <h3 class="welcome-margin">Benvenuto, inserisci i tuoi dati per effettuare la registrazione!</h3>
             <h7>I campi contrassegnati da un asterisco sono obbligatori</h7>
             <!--<div class="form-group">-->
-            <form action="../Backend/registration.php" class="form-registration" method="post" name="formRegistration" onsubmit="return validaForm()">
+            <form action="../Backend/myRegistration.php" class="form-registration" method="post" name="formRegistration" onsubmit="return validaForm()">
                 <!--Nome-->
                 <input type="text" name="inputName" class="form-control" placeholder="Nome*" autofocus required/>
                 <br>
@@ -49,13 +49,11 @@
                 <input type="file" name="inputImage"/>
                 <br>
                 <br>
-                <div style="text-align: center">
+                <div class="middle margin-buttom">
                     <button type="submit" name="registrationButton" class="btn btn-secondary active">Iscriviti</button>
                     <br>
                     <br>
                     <h7>Sei già registrato? <a href=../../Frontend/login.html> Effettua il login</a> </h7>
-                    <br>
-                    <br>
                 </div>
             </form>
         </div>
