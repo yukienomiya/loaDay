@@ -8,12 +8,7 @@
             }
 
             //CONNESSIONE AL DB
-            $mysqli=new mysqli('localhost', 'root', 'password', 'ltw', '3306');
-            if($mysqli->connect_error){
-                die('Errore di connessione('. $mysql->connect_errno . ')' . $mysqli->connect_error);
-            } else {
-                echo'Connesso. ' . $mysqli->host_info . "\n";
-            }
+            require_once('connection.php');
 
             //RACCOLTA DEI DATI INSERITI NELLA FORM
             $name=strtolower($_POST['inputName']);  //prende il nome appena inserito nella form
@@ -26,7 +21,7 @@
             }
 
             //CONTROLLO SE I DATI DELLA FORM SONO GIA' NEL DB
-            $q1=$mysqli->query("SELECT * FROM utenti WHERE nome='$name' AND cognome='$surname' AND email='$email'"); //scrivo la query
+            $q1=$conn->query("SELECT * FROM users WHERE email='$email' AND nome='$name' AND cognome='$surname'"); //scrivo la query
             if($q1->num_rows) {
                 echo "<h1> Utente già registrato, eseguire il login</h1>
                 <a href=../../Frontend/login.html> Click here to login</a>";
@@ -35,31 +30,31 @@
             //INSERIMENTO DATI NEL DB
             else{
                 if(($ddn!="") && (isset($_POST['genere'])==true)){  //se i campi data di nascita e genere sono stati compilati
-                    $q2="INSERT INTO utenti (nome, cognome, email, password, dataDiNascita, genere) VALUES ('$name','$surname','$email','$password','$ddn','$genere')"; //crea una nuova query per inserire i valori nella tabella
-                    if (!$mysqli->query($q2)) { //controlla se tutto è andato a buon fine
-                        die($mysqli->error);
+                    $q2="INSERT INTO users (email, pass, nome, cognome, dataDiNascita, genere) VALUES ('$email','$password','$name','$surname','$ddn','$genere')"; //crea una nuova query per inserire i valori nella tabella
+                    if (!$conn->query($q2)) { //controlla se tutto è andato a buon fine
+                        die($conn->error);
                     }
                 }
 
                 if(($ddn!="") && (isset($_POST['genere'])==false)){  //se il campo nascita è stato compilato ma genere no
-                    $q2="INSERT INTO utenti (nome, cognome, email, password, dataDiNascita) VALUES ('$name','$surname','$email','$password','$ddn')"; //crea una nuova query per inserire i valori nella tabella
-                    if (!$mysqli->query($q2)) { //controlla se tutto è andato a buon fine
-                        die($mysqli->error);
+                    $q2="INSERT INTO users (email, pass, nome, cognome, dataDiNascita) VALUES ('$email','$password','$name','$surname','$ddn')"; //crea una nuova query per inserire i valori nella tabella
+                    if (!$conn->query($q2)) { //controlla se tutto è andato a buon fine
+                        die($conn->error);
                     }
                 }
 
                 if(($ddn=="") && (isset($_POST['genere'])==true)){  //se il campo data di nascita non è stato compilato ma genere si
-                    $q2="INSERT INTO utenti (nome, cognome, email, password, genere) VALUES ('$name','$surname','$email','$password','$genere')"; //crea una nuova query per inserire i valori nella tabella
-                    if (!$mysqli->query($q2)) { //controlla se tutto è andato a buon fine
-                        die($mysqli->error);
+                    $q2="INSERT INTO users (email, pass, nome, cognome, genere) VALUES ('$email','$password','$name','$surname','$genere')"; //crea una nuova query per inserire i valori nella tabella
+                    if (!$conn->query($q2)) { //controlla se tutto è andato a buon fine
+                        die($conn->error);
                     }
                 }
 
                 else{
                     if(($ddn=="") && (isset($_POST['genere'])==false)){  //se i campi data di nascita e genere non sono stati compilati
-                        $q2="INSERT INTO utenti (nome, cognome, email, password) VALUES ('$name','$surname','$email','$password')"; //crea una nuova query per inserire i valori nella tabella
-                        if (!$mysqli->query($q2)) { //controlla se tutto è andato a buon fine
-                            die($mysqli->error);
+                        $q2="INSERT INTO users (email, pass, nome, cognome) VALUES ('$email','$password','$name','$surname')"; //crea una nuova query per inserire i valori nella tabella
+                        if (!$conn->query($q2)) { //controlla se tutto è andato a buon fine
+                            die($conn->error);
                         }
                     }
                 }
