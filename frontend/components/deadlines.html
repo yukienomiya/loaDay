@@ -8,24 +8,29 @@
           minDate: new Date()
         });
       });
-      $(".deadline").click( function(e) {
+      $("#deadlinesList").on("click", ".deadline", function(e) {
         var el = this;
+        // se l'evento non e stato scatenato dal div principale (lo user ha cliccato su uno degli altri elementi contenuti nel div principale)
         if (event.target != this) {
+          // se lo user ha cliccato sul bottone delete
           if (event.target.tagName == 'BUTTON') {
+            // TODO eliminare la dl dal db
             $(event.target.parentElement).remove();
           }
+          // el = div principale
           el = event.target.parentElement;
         }
         var content = el.children;
         var dl_time = content[0];
         var dl_text = content[1];
         var delete_btn = content[2];
+        // toggle del div al click
         var displayTime = $(dl_time).css("display");
         if (displayTime == "block") {
-          $(el).css({"background-color": "rgb(189, 140, 204)"});
-          $(dl_time).css({"display": "none"});
-          $(dl_text).css({"display": "none"});
-          $(delete_btn).css({"display": "block"});
+          $(el).css({ "background-color": "rgb(189, 140, 204)" });
+          $(dl_time).css({ "display": "none" });
+          $(dl_text).css({ "display": "none" });
+          $(delete_btn).css({ "display": "block" });
         }
         else {
           $(el).css({ "background-color": "white" });
@@ -35,7 +40,7 @@
         }
       });
 
-      $(".deadline").mouseleave(function () {
+      $("#deadlinesList").on("mouseleave", ".deadline", function () {
         var el = event.target;
         var content = el.children;
         $(el).css({ "background-color": "white" });
@@ -43,40 +48,37 @@
         $(content[1]).css({ "display": "block" });
         $(content[2]).css({ "display": "none" });
       });
+      
     </script>
   </head>
   <body>
     <div class="card sections">
       <div class="card-body">
         <h5 class="card-title text-center text-grey">DEADLINES</h5>
+        
         <div id="deadlines" class="flex-column">
-          <div class="row justify-content-center">
+          <div class="row justify-content-center" id="addDeadline">
+            <button class="btn col-10 deadline-add flex-column justify-content-center" data-toggle="modal"
+              data-target="#newDeadline">NEW DEADLINE</button>
+          </div>
+
+          <div class="row justify-content-center" id="deadlinesList">
             <div class="col-10 deadline flex-column justify-content-center">
               <div class="deadline-content deadline-time text-center text-justify">5DD 23H 50M 32S</div>
               <div class="deadline-content deadline-text text-center text-justify">Consegna progetto Basi2</div>
               <button class="btn deadline-btn btn-sm justify-content-center">DELETE</button>
             </div>
-          </div>
-
-          <div class="row justify-content-center">
             <div class="col-10 deadline flex-column justify-content-center">
               <div class="deadline-content deadline-time text-center text-justify">536DD 23H 50M 32S</div>
               <div class="deadline-content deadline-text text-center text-justify">Application per qualcosa</div>
               <button class="btn deadline-btn btn-sm">DELETE</button>
             </div>
-          </div>
-
-          <div class="row justify-content-center">
             <div class="col-10 deadline flex-column justify-content-center">
               <!--the selected deadline date has to be less than 100000 days away-->
               <div class="deadline-content deadline-time text-center text-justify">99999DD 23H 59M 59S</div>
               <div class="deadline-content deadline-text text-center text-justify">Altro progetto</div>
               <button class="btn deadline-btn btn-sm">DELETE</button>
             </div>
-          </div>
-
-          <div class="row justify-content-center">
-            <button class="btn col-10 deadline-add flex-column justify-content-center" data-toggle="modal" data-target="#newDeadline">NEW DEADLINE</button>
           </div>
         </div>
       </div>
@@ -92,22 +94,21 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form action="addDeadline.php" method="POST">
             <div class="modal-body">
               <div class="input-group date deadline-add-fields" id="datetimepicker5" data-target-input="nearest">
-                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker5"
+                <input name="deadlineDate" id="deadlineDate" type="text" class="form-control datetimepicker-input" data-target="#datetimepicker5"
                   placeholder="Pick a date" />
                 <div class="input-group-append" data-target="#datetimepicker5" data-toggle="datetimepicker">
                   <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                 </div>
               </div>
-              <input type="text" class="col-12 form-control deadline-add-fields" placeholder="Add a description">
+              <input name="deadlineDescription" id="deadlineDescription" type="text" class="col-12 form-control deadline-add-fields" placeholder="Add a description">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn bg-lilac">Save changes</button>
+              <button name="addDeadline" id="addDeadline" type="button" class="btn bg-lilac" onclick="saveDeadline()">Save</button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
