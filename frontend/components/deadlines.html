@@ -14,8 +14,21 @@
         if (event.target != this) {
           // se lo user ha cliccato sul bottone delete
           if (event.target.tagName == 'BUTTON') {
-            // TODO eliminare la dl dal db
-            $(event.target.parentElement).remove();
+            // eliminare la dl dal db
+            var dl = event.target.parentElement;
+            var deadlineID = dl.lastElementChild.value;
+            $.ajax({
+              url: "../backend/deleteDeadline.php",
+              type: "POST",
+              data: "deadlineID=" + deadlineID,
+              success: function () {
+                // elimina la deadline dalla pagina
+                $(dl).remove();
+              },
+              error: function () {
+                alert("L'eliminazione non è andata a buon fine. Ritenta!");
+              }
+            });
           }
           // el = div principale
           el = event.target.parentElement;
