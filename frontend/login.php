@@ -6,15 +6,33 @@
     <title>loadDay - Login Page</title>
 
     <link href="main.css" rel="stylesheet">
-
   </head>
   <body>
     <div class="wrapper-full-page" style="background: lavender">
-      <div class="full-page section-image" filter-color="black">
-          <div class="content">
-              <div class="container">
-                  <div class="col-lg-4 col-md-6 col-sm-10 ml-auto mr-auto">
-                       <form method="POST" action="../backend/login.php">
+        <div class="full-page section-image" filter-color="black">
+            <div class="content">
+                <div class="container">
+                    <div class="col-lg-4 col-md-6 col-sm-10 ml-auto mr-auto">
+
+                        <?php
+                            if(isset($_GET['message']))
+                            {
+                        ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?php echo $_GET['message']?>
+                            </div>
+                        <?php } ?>
+
+                        <?php
+                            if(isset($_GET['message2']))
+                            {
+                        ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?php echo $_GET['message2']?>
+                            </div>
+                        <?php } ?>
+
+                        <form method="POST" action="../backend/login.php">
                              <div class="card">
                               <div class="card-header">
                                   <div class="section-image">
@@ -33,7 +51,7 @@
                                       <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email" required="" autofocus="">
                                     </div>
 
-                                  <div class="input-group form-control-lg">
+                                    <div class="input-group form-control-lg">
                                       <div class="input-group-prepend">
                                           <div class="input-group-text">
                                             <svg class="bi bi-shield-lock" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -44,11 +62,10 @@
                                           </div>
                                       </div>
                                       <input id="pass" type="password" class="form-control" name="pass" required="" placeholder="Password">
-
-                                                                              </div>
+                                    </div>
                               </div>
                               <div class="card-footer ">
-                                   <button type="submit" class="btn btn-primary btn-lg btn-block mb-3">
+                                   <button type="submit" name="login" class="btn btn-primary btn-lg btn-block mb-3">
                                           Login
                                       </button>
                                   

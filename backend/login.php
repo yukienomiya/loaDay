@@ -1,32 +1,39 @@
 <?php
-    $email = $_POST['email'];
-    $pass = $_POST['pass'];
+    session_start();
+    require_once('connection.php');
 
-    $servername = "localhost";
-    $username = "loaday";
-    $password = "";
-    $db = "my_loaday";
+    if(isset($_POST['login']))
+    {
+        $errorMSG = "";
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $db);
-
-    // Check connection
-    if(!$conn) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    $sql = "SELECT nome, cognome FROM users WHERE email = '$email' AND pass = '$pass'";
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-        while($row = mysqli_fetch_assoc($result)) {
-            echo "Nome: " . $row["nome"]. " Cognome: " . $row["cognome"]. "<br>";
+        if (empty($_POST["pass"])) {
+            $errorMSG = "<li>Password is required</<li>";
+        } else {
+            $pass = $_POST["pass"];
         }
-        header("location: ../frontend/home.html");
-    } else {
-        echo "ERRORE AUTENTICAZIONE";
+
+        if (empty($_POST["email"])) {
+            $errorMSG .= "<li>Email is required</li>";
+        } else {
+            $email = $_POST["email"];
+        }
+
+        $sql = "SELECT nome, cognome FROM users WHERE email = '$email' AND pass = '$pass'";
+        $result = mysqli_query($conn, $sql);
+        mysqli_close($conn);
+    
+        if(empty($errorMSG)){
+            if(mysqli_num_rows($result)) {
+                $_SESSION['email'] = $email;
+                echo json_encode(['code'=>200]);
+                exit;
+            }
+        }
+    }
+    else
+    {
+        header('HTTP/1.1 401 Unauthorized');
     }
 
-    mysqli_close($conn);
+    
 ?>
