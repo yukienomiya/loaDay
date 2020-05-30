@@ -61,6 +61,12 @@
         $(content[1]).css({ "display": "block" });
         $(content[2]).css({ "display": "none" });
       });
+
+      $(document).ready(function () {
+        $("#newDeadlineForm").submit(function(e) {
+          saveDeadline(e);
+        });
+      });
       
     </script>
   </head>
@@ -76,22 +82,7 @@
           </div>
 
           <div class="row justify-content-center" id="deadlinesList">
-            <div class="col-10 deadline flex-column justify-content-center">
-              <div class="deadline-content deadline-time text-center text-justify">5DD 23H 50M 32S</div>
-              <div class="deadline-content deadline-text text-center text-justify">Consegna progetto Basi2</div>
-              <button class="btn deadline-btn btn-sm justify-content-center">DELETE</button>
-            </div>
-            <div class="col-10 deadline flex-column justify-content-center">
-              <div class="deadline-content deadline-time text-center text-justify">536DD 23H 50M 32S</div>
-              <div class="deadline-content deadline-text text-center text-justify">Application per qualcosa</div>
-              <button class="btn deadline-btn btn-sm">DELETE</button>
-            </div>
-            <div class="col-10 deadline flex-column justify-content-center">
-              <!--the selected deadline date has to be less than 100000 days away-->
-              <div class="deadline-content deadline-time text-center text-justify">99999DD 23H 59M 59S</div>
-              <div class="deadline-content deadline-text text-center text-justify">Altro progetto</div>
-              <button class="btn deadline-btn btn-sm">DELETE</button>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -107,20 +98,22 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <div class="modal-body">
-              <div class="input-group date deadline-add-fields" id="datetimepicker5" data-target-input="nearest">
-                <input name="deadlineDate" id="deadlineDate" type="text" class="form-control datetimepicker-input" data-target="#datetimepicker5"
-                  placeholder="Pick a date" />
-                <div class="input-group-append" data-target="#datetimepicker5" data-toggle="datetimepicker">
-                  <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+            <form method="post" id="newDeadlineForm">
+              <div class="modal-body">
+                <div class="input-group date deadline-add-fields" id="datetimepicker5" data-target-input="nearest">
+                  <input name="deadlineDate" id="deadlineDate" type="text" class="form-control datetimepicker-input" data-target="#datetimepicker5"
+                    placeholder="Seleziona la data" required/>
+                  <div class="input-group-append" data-target="#datetimepicker5" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                  </div>
                 </div>
+                <input name="deadlineDescription" id="deadlineDescription" type="text" class="col-12 form-control deadline-add-fields" placeholder="Scrivi una descrizione" required>
               </div>
-              <input name="deadlineDescription" id="deadlineDescription" type="text" class="col-12 form-control deadline-add-fields" placeholder="Add a description">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button name="addDeadline" id="addDeadline" type="button" class="btn bg-lilac" onclick="saveDeadline()">Save</button>
-            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button name="addDeadline" id="addDeadline" type="submit" class="btn bg-lilac">Save</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
