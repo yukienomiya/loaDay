@@ -1,0 +1,61 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+.bg-primary {
+  background-color: #524DF2 !important;
+}
+
+.bg-secondary {
+  background-color: rgba(82, 77, 242, 0.75) !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.container {
+  margin-top: 0px;
+}
+
+.card-title {
+  margin-bottom: 20px;
+}
+
+.navbar {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.nav-item {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.fa-times {
+  color: rgb(138, 138, 138);
+}
+
+.fa-plus {
+  color: rgb(0, 167, 0);
+}
+
+.btn:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.1rem rgba(128, 128, 128, 0.705);
+          box-shadow: 0 0 0 0.1rem rgba(128, 128, 128, 0.705);
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #ced4da;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.1rem rgba(128, 128, 128, 0.705);
+          box-shadow: 0 0 0 0.1rem rgba(128, 128, 128, 0.705);
+}
+
+.input-group > .input-group-append > .btn {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}

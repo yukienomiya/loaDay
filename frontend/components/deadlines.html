@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      $(function() {
+        $("#datetimepicker5").datetimepicker({
+          locale: "it",
+          minDate: new Date()
+        });
+      });
+
+      // aggiornamento countdown per le deadlines
+      setInterval(function() {
+        updateCountdown();
+      }, 1000); //Every 1000ms = 1sec
+
+      $("#deadlinesList").on("click", ".deadline", function(e) {
+        var el = this;
+        // se l'evento non e stato scatenato dal div principale (lo user ha cliccato su uno degli altri elementi contenuti nel div principale)
+        if (event.target != this) {
+          // se lo user ha cliccato sul bottone delete
+          if (event.target.tagName == 'BUTTON') {
+            // eliminare la dl dal db
+            var dl = event.target.parentElement;
+            var deadlineID = dl.lastElementChild.value;
+            $.ajax({
+              url: "../backend/deleteDeadline.php",
+              type: "POST",
+              data: "deadlineID=" + deadlineID,
+              success: function () {
+                // elimina la deadline dalla pagina
+                $(dl).remove();
+              },
+              error: function () {
+                alert("L'eliminazione non è andata a buon fine. Ritenta!");
+              }
+            });
+          }
+          // el = div principale
+          el = event.target.parentElement;
+        }
+        var content = el.children;
+        var dl_time = content[0];
+        var dl_text = content[1];
+        var delete_btn = content[2];
+        // toggle del div al click
+        var displayTime = $(dl_time).css("display");
+        if (displayTime == "block") {
+          $(el).css({ "background-color": "rgb(189, 140, 204)" });
+          $(dl_time).css({ "display": "none" });
+          $(dl_text).css({ "display": "none" });
+          $(delete_btn).css({ "display": "block" });
+        }
+        else {
+          $(el).css({ "background-color": "white" });
+          $(dl_time).css({ "display": "block" });
+          $(dl_text).css({ "display": "block" });
+          $(delete_btn).css({ "display": "none" });
+        }
+      });
+
+      $("#deadlinesList").on("mouseleave", ".deadline", function () {
+        var el = event.target;
+        var content = el.children;
+        $(el).css({ "background-color": "white" });
+        $(content[0]).css({ "display": "block" });
+        $(content[1]).css({ "display": "block" });
+        $(content[2]).css({ "display": "none" });
+      });
+
+      $(document).ready(function () {
+        $("#newDeadlineForm").submit(function(e) {
+          saveDeadline(e);
+        });
+      });
+      
+    </script>
+  </head>
+  <body>
+    <div class="card sections">
+      <div class="card-body">
+        <h5 class="card-title text-center text-grey">DEADLINES</h5>
+        
+        <div id="deadlines" class="flex-column">
+          <div class="row justify-content-center" id="addDeadline">
+            <button class="btn col-10 deadline-add flex-column justify-content-center" data-toggle="modal"
+              data-target="#newDeadline">NUOVA DEADLINE</button>
+          </div>
+
+          <div class="row justify-content-center" id="deadlinesList">
+            
+          </div>
+        </div>
+      </div>
+    
+    </div>
+    <div class="modal fade" id="newDeadline" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Inserisci una nuova deadline</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+            <form method="POST" id="newDeadlineForm">
+              <div class="modal-body">
+                <div class="input-group date deadline-add-fields" id="datetimepicker5" data-target-input="nearest">
+                  <input name="deadlineDate" id="deadlineDate" type="text" class="form-control datetimepicker-input" data-target="#datetimepicker5"
+                    placeholder="Seleziona la data" required/>
+                  <div class="input-group-append" data-target="#datetimepicker5" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                  </div>
+                </div>
+                <input name="deadlineDescription" id="deadlineDescription" type="text" class="col-12 form-control deadline-add-fields" placeholder="Scrivi una descrizione" required>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="resetDeadlineForm()">CANCELLA</button>
+                <button name="addDeadline" id="addDeadline" type="submit" class="btn bg-lilac">SALVA</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
