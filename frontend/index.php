@@ -35,7 +35,7 @@
 		</nav>
 	  
 		<!-- Full Page Intro -->
-		<div class="view" style="background-image: url('IMG/sfondo.png'); background-repeat: no-repeat; background-size: cover;">
+		<div class="view" style="background-image: url('../media/sfondo.png'); background-repeat: no-repeat; background-size: cover;">
 		  <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
 			<div class="container">
 			  <div class="row">
@@ -219,8 +219,8 @@
 		  </div>
 		</footer>
 
-		<script src="node_modules/bootstrap/dist/js/jquery.min.js"></script>
-		<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="js/index.js"></script>
 	  </body>
 </html>
