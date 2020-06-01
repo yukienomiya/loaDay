@@ -170,7 +170,24 @@ progress::-webkit-progress-value {
   color: white;
 }
 
-.not-rounded {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+.not-roundedL {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-right: 10px;
+}
+
+.no-tasks {
+  padding-left: 0px;
+  color: #707070;
+}
+
+.no-shadow:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.0rem;
+          box-shadow: 0 0 0 0.0rem;
+}
+
+.completedTask {
+  text-decoration: line-through;
+  color: #707070;
 }

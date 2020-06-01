@@ -49,8 +49,13 @@
 .form-control:focus {
   color: #495057;
   background-color: #fff;
-  border-color: #80bdff;
+  border-color: #ced4da;
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.1rem rgba(128, 128, 128, 0.705);
           box-shadow: 0 0 0 0.1rem rgba(128, 128, 128, 0.705);
+}
+
+.input-group > .input-group-append > .btn {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
 }
