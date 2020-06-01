@@ -6,6 +6,7 @@
 		<title>loaDay - Home Page</title>
 		<!-- Bootstrap core CSS -->
 		<link href="main.css" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
 	  </head>
 	  <body>
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
@@ -20,18 +21,11 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			  <!-- Left -->
 			  <ul class="navbar-nav mr-auto">
-				<li class="nav-item active">
-				  <a class="nav-link" href="index.html">Home
-				  </a>
-				</li>
-				<li class="nav-item">
-				  <a class="nav-link" href="about_us.html">About Us</a>
-				</li>
 			  </ul>
 			  <!-- Right -->
-			  <ul class="navbar-nav nav-flex-icons">
+			  <ul class="navbar-nav nav-flex-icons ml-auto">
 				<li class="nav-item">
-				  <a href="signin.html" class="nav-link border border-light rounded">
+				  <a href="registration.html" class="nav-link border border-light rounded">
 					Registrati!
 				  </a>
 				</li>
@@ -41,7 +35,7 @@
 		</nav>
 	  
 		<!-- Full Page Intro -->
-		<div class="view" style="background-image: url('img/sfondo.png'); background-repeat: no-repeat; background-size: cover;">
+		<div class="view" style="background-image: url('IMG/sfondo.png'); background-repeat: no-repeat; background-size: cover;">
 		  <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
 			<div class="container">
 			  <div class="row">
@@ -74,7 +68,7 @@
 					</div>
 					<div class="card-body">
 					  <!-- Form -->
-					  <form id="loginform" class="needs-validation" novalidate method="POST" action="../backend/login.php">
+					  <form id="loginform" class="needs-validation" novalidate method="POST" action="backend/login.php">
 						<div class="form-row">
 							<div class="input-group form-control-lg">
 								<span class="input-group-prepend">
@@ -112,7 +106,7 @@
 						<div class="text-center mt-4">
 							<button id="login" type="submit" name="login" class="btn btn-primary">Invia</button>
 							<br>
-							<small><a href="registrazione.html" class="btn-link">Non sei registrato? Clicca qui!</a></small>
+							<small><a href="PageSignIn/registration.html" class="btn-link">Non sei registrato? Clicca qui!</a></small>
 						</div>
 					  </form>
 					</div>
@@ -128,7 +122,7 @@
 			<section class="mt-5">
 			  <div class="row">
 				<div class="col-md-6 mb-4">
-					<div id="myCar" class="carousel slide" data-ride="carousel">
+					<div id="myCar" class="carousel slide carousel-fade" data-ride="carousel">
 					  <ol class="carousel-indicators">
 						<li data-target="#myCar" data-slide-to="0" class="active"></li>
 						<li data-target="#myCar" data-slide-to="1"></li>
@@ -138,38 +132,38 @@
 					  </ol>
 					  <div class="carousel-inner">
 						  <div class="carousel-item active">
-							  <img class="d-block w-100" src="img/1.png" alt="First slide">
+							  <img class="d-block w-100" src="../media/1.png" alt="First slide">
 							  <div class="carousel-caption d-none d-md-block">
 								  <h5>Home Page</h5>
 									<p>La pagina inziale dove ti trovi ora</p>
 							  </div>
 						  </div>
 						  <div class="carousel-item">
-							  <img class="d-block w-100" src="img/2.png" alt="Second slide">
+							  <img class="d-block w-100" src="../media/2.png" alt="Second slide">
 							  <div class="carousel-caption d-none d-md-block">
 								  <h5>Pagina Principale</h5>
 									<p>Dove potrai visualizzare, modificare ed eliminare tasks e deadlines</p>
 							  </div>
 						  </div>
 						  <div class="carousel-item">
-							  <img class="d-block w-100" src="img/3.png" alt="Third slide">
+							  <img class="d-block w-100" src="../media/3.png" alt="Third slide">
 							  <div class="carousel-caption d-none d-md-block">
 								  <h5>About Us</h5>
 									<p>Qui troverai una descrizione dei componenti del gruppo di questo progetto!</p>
 							  </div>
 						  </div>
 						  <div class="carousel-item">
-							  <img class="d-block w-100" src="img/4.png" alt="Third slide">
+							  <img class="d-block w-100" src="../media/4.png" alt="Third slide">
 							  <div class="carousel-caption d-none d-md-block">
 								  <h5>Profilo</h5>
 									<p>LOREM IPSUM STO PIPOLO</p>
 							  </div>
 						  </div>
 						  <div class="carousel-item">
-							  <img class="d-block w-100" src="img/5.png" alt="Third slide">
+							  <img class="d-block w-100" src="../media/5.png" alt="Third slide">
 							  <div class="carousel-caption d-none d-md-block">
-								  <h5>Pagina di Registrazione</h5>
-									<p>Pronto a sfruttare a pieno la tua giornata?!</p>
+							  	<h5>Pagina di Registrazione</h5>
+								<p>Pronto a sfruttare a pieno la tua giornata?!</p>
 							  </div>
 						  </div>
 					  </div>
@@ -186,8 +180,9 @@
 			  </div>
 				<div class="col-md-6 mb-4">
 				  <h3 class="h3 mb-3">Benvenuto alla descrizione segreta</h3>
-				  <p>Questa web app nasce dall'idea di 3 ragazzi che dovevano svolgere l'esame di linguaggi e tecnologie per il web durante l'anno accademico 2019/2020</p>
+				  <p>LoaDay nasce dall'idea di 3 ragazzi che dovevano svolgere l'esame di linguaggi e tecnologie per il web durante l'anno accademico 2019/2020</p>
 				  <p>Leggi i dettagli in basso per scoprire da quale pagine è formata LoaDay.</p>
+				  <p>Questa è soltanto una breve descrizione, <a href="PageSignIn/registration.html">registrati</a> e visita la pagina about us per saperne ancora di più!</p>
 
 				  <hr>
 
@@ -224,103 +219,8 @@
 		  </div>
 		</footer>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
-		<script>
-			$(document).ready(function(){
-
-				
-				$("#mostraNascosta").click(function(){
-					$("#nascosta").toggle(500, function(){
-							if(!($("#nascosta").css('display') == 'none'))
-							{
-								$('html,body').animate({
-									scrollTop: $("#nascosta").offset().top},
-									'slow');
-								$("#mostraNascosta").text("Chiudi");
-							}
-							else
-							{
-								$("#mostraNascosta").text("Leggi altro");
-							}
-						});
-				});
-
-
-				$(".list-group-item").hover(function(){
-					$(this).addClass('evidenzia');
-				}, function(){
-					$(this).removeClass('evidenzia');
-				});
-
-				function isValidEmail(email) {
-					var pattern = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/;
-					return pattern.test(email);
-				};
-
-				function isValidPassword(password) {
-					var pattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&-_])[A-Za-z\d@$!%*#?&-_]{8,}$/; //min 8 caratteri, almeno 1 numero e almeno 1 carattere speciale
-					return pattern.test(password);
-				};
-
-				var errLogin = '<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">'+
-				'<div class="modal-dialog modal-dialog-centered" role="document">'+
-				'<div class="modal-content">'+
-					'<div class="modal-header">'+
-					'<h5 class="modal-title" id="exampleModalLongTitle">Qualcosa è andato storto...</h5>'+
-					'<button type="button" class="close" data-dismiss="modal" aria-label="Close">'+
-						'<span aria-hidden="true">&times;</span>'+
-					'</button>'+
-					'</div>'+
-					'<div class="modal-body">'+
-					'L\'email o la password sono errati, per favore prova di nuovo.'+
-					'</div>'+
-					'<div class="modal-footer">'+
-					'<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>'+
-					'</div>'+
-				'</div>'+
-				'</div>'+
-				'</div>';
-
-				$('#loginform').submit(function(event){
-					event.preventDefault();
-
-					var email = $('#email').val();
-					var password = $('#pass').val();
-					var errori = $('.invalid-feedback');
-					var login = $('#login').val();
-
-					$(errori).hide();
-
-					if(!isValidEmail(email) && !isValidPassword(password)) $(errori).show();
-					else if(!isValidEmail(email)) $(errori[0]).show();
-					else if(!isValidPassword(password)) $(errori[1]).show();
-					else
-					{
-						var form = $(this);
-    					var url = form.attr('action');
-
-						var ajaxRequest =$.ajax({
-							type:'POST',
-							url: url,
-							dataType:'json',
-							data:{email:email, pass:password, login:login}
-						});
-
-						ajaxRequest.done(function(data){
-							if (data.code == "200"){
-								$(location).attr('href',"../frontend/home.php");
-							}
-						});
-
-						ajaxRequest.fail(function(return_data){
-							$(errLogin).modal('show');
-							$('#loginform').trigger('reset');
-						});
-					}
-				});
-			});
-		</script>
+		<script src="node_modules/bootstrap/dist/js/jquery.min.js"></script>
+		<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="js/index.js"></script>
 	  </body>
 </html>
