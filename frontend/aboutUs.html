@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>loaDay</title>   <!--titolo della pgina-->
+        <meta charset="utf-8"/> <!--imposto la codifica della pagina-->
+        <meta name="viewport" content="width-device-width, initial-scale=1"/>   <!--faccio in modo che la visualizzazione della pagina si adatti ad ogni tipo di dispositivo-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  <!--importo file jquery-->
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> <!--importo file di bootstrap-->
+        <link rel="stylesheet" type="text/css" href="main.css"> <!--importo file di bootstrap-->
+        <link rel="stylesheet" type="text/css" href="style.css">  <!--importo il file personalizzato .css-->
+        <script type="text/javascript" src="main.js"></script>  <!--importo classe javascript-->
+    </head>
+
+    <body>
+      <!--NAVBAR-->
+      <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#">
+          <img src="../media/logo.png" class="d-inline-block align-top logo" width="110px" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+          aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExample05">
+          <ul class="navbar-nav ml-auto">
+              <li>
+                  <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Profilo</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="aboutUs.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">logout</a>
+              </li>
+          </ul>
+      </div>
+      </nav>
+      
+      <!--CONTENITORE DELLA PAGINA-->
+      <div class="container container-fluid"> <!--<crea un "contenitore" per la pagina-->
+
+        <!--CAROSELLO-->
+        <div id="carouselAboutUs" class="carousel container-position" data-ride="carousel"> <!--crea un contenitore per il carosello-->
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="700">  <!--setta l'intervallo di tempo tra un immagine e l'altra-->
+              <img src="../anteprima_logo.JPG" class="d-block w-100">   <!--seleziona la prima immagine del carosello-->
+            </div>
+            <div class="carousel-item" data-interval="700"> <!--setta l'intervallo di tempo tra un immagine e l'altra-->
+              <img src="../anteprima_Registrazione.png" class="d-block w-100">  <!--seleziona la seconda immagine del carosello-->
+            </div>
+            <div class="carousel-item" data-interval="700"> <!--setta l'intervallo di tempo tra un immagine e l'altra-->
+              <img src="../anteprima_home.JPG" class="d-block w-100">   <!--seleziona la terza immagine del carosello-->
+            </div>
+          </div>
+
+          <!--FRECCETTE CAROSELLO-->
+          <a class="carousel-control-prev" href="#carouselAboutUs" role="button" data-slide="prev"> <!--implementa la freccia "precedente" del carosello-->
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselAboutUs" role="button" data-slide="next"> <!--implementa la freccia "successiva" del carosello-->
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+
+          <!--Indicatori-->
+          <ol class="carousel-indicators">  <!--implementa gli indicatori del carosello-->
+            <li data-target="#carouselAboutUs" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselAboutUs" data-slide-to="1" class="active"></li>
+            <li data-target="#carouselAboutUs" data-slide-to="2" class="active"></li>
+          </ol>
+        </div>
+
+        <!--Riga principale-->
+        <div class="row margin-top-small margin-bottom-small">  <!--crea una riga nella pagina-->
+          <!--Prima colonna-->
+          <div class="col-md-4 text-center">    <!--crea una prima colonna grande un terzo della pagina-->
+              <li class="listaAboutUs no-bullets" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">   <!--crea  una lista senza punti per il collapse di seguito-->
+                  <a>Da chi nasce loaDay</a>    <!--elemento della lista-->
+              </li>
+              <!--Primo collapse-->
+              <div id="collapseOne" class="collapse margin-top-xSmall margin-bottom-xSmall" aria-labelledby="headingOne">   <!--crea il primo elemento di tipo collapse-->
+                  <div class="card-deck">   <!--crea una elemento di tipo card-deck-->
+                      <!--Card_Foto_1-->
+                      <div class="card" data-toggle="collapse" data-target="#collapseOneOne" aria-expanded="true" aria-controls="collapseOneOne">   <!--crea un elemento di tipo card-->
+                          <img src="../Gabriele_image.png" class="card-img-top">    <!--selezeziona l'immagine della card-->
+                      </div>
+                      <!--Card_Foto_2-->
+                      <div class="card" data-toggle="collapse" data-target="#collapseOneTwo" aria-expanded="true" aria-controls="collapseOneTwo">
+                          <img src="../Giorgio_image.png" class="card-img-top">
+                      </div>
+                      <!--Card_Foto_3-->
+                      <div class="card" data-toggle="collapse" data-target="#collapseOneThree" aria-expanded="true" aria-controls="collapseOneThree">
+                          <img src="../Yuki_image.png" class="card-img-top">
+                      </div>
+                  </div>
+              </div>
+              <!--Collapse_Presentazione_1-->
+              <div id="collapseOneOne" class="collapse margin-top-xSmall margin-xSmall" aria-labelledby="headingOne">   <!--crea il primo elemento di tipo collapse del primo elemento collapse-->
+                  <div class="card">  <!--crea il "contorno" della card-->
+                      <div class="card-body"> <!--crea il corpo-->
+                          <h5 class="card-title">Gabriele</h5>  <!--varie descrizioni della card-->
+                          <p class="card text">26 anni</p>
+                          <p class="card-text">Studente di informatica</p>
+                          <p class="card-text">La tecnologia è l'ambito che da sempre mi appassiona, già dai primi anni del liceo la mia idea era quella di immergermi in questo mondo ed approfondirne la conoscenza.</p>
+                          <p class="card-text">Nel tempo libero mi dedico ad altre tre grandi passioni: il pianoforte, che suono sin da bambino, la vespa, un regalo ricevuto dal mio nonno meccanico e la birra artigianale.</p>
+                          <a href=https://github.com/Ga94> Link al profilo GitHub</a>
+                      </div>
+                  </div>
+              </div>
+              <!--Collapse_Presentazione_2-->
+              <div id="collapseOneTwo" class="collapse margin-top-xSmall margin-xSmall" aria-labelledby="headingOne">
+                  <div class="card">  <!--crea il contorno-->
+                      <div class="card-body"> <!--crea il corpo-->
+                          <h5 class="card-title">Giorgio</h5>
+                          <p class="card-text">Piccola descrizione</p>
+                          <a href=https://github.com/GiorgioMor> Link al profilo GitHub</a>
+                      </div>
+                  </div>
+              </div>
+              <!--Collapse_Presentazione_3-->
+              <div id="collapseOneThree" class="collapse margin-top-xSmall margin-xSmall" aria-labelledby="headingOne">
+                  <div class="card">  <!--crea il contorno-->
+                      <div class="card-body"> <!--crea il corpo-->
+                          <h5 class="card-title">Yuki</h5>
+                          <p class="card-text">Piccola descrizione</p>
+                          <a href=https://github.com/yukienomiya> Link al profilo GitHub</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!--Seconda colonna-->
+          <div class="col-md-4 text-center">    <!--crea una seconda colonna grande un terzo della pagina-->
+              <li class="listaAboutUs no-bullets" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">   <!--crea  una lista senza punti per il collapse di seguito-->
+                  <a>Come nasce loaDay</a>  <!--elemento della lista-->
+              </li>
+              <!--Secondo collapse-->
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">  <!--crea il primo elemento di tipo collapse-->
+                  <div class="card-body">   <!--corpo della card-->
+                      L'informatica è una scienza che richiede precisione prima di tutto e il modo migliore è quello di essere noi per primi delle persone precise ogni singolo giorno. Per raggiungere questo obiettivo non c'è nulla di meglio che una piattaforma che ci permetta di ottimizzare il tempo e che ci ricordi cosa dobbiamo fare e quando farlo. Di applicazioni in stile "to do list" ce ne sono tantissime ma noi, da buoni informatici, ne volevamo una nostra ed ecco che quando ci si è presentata l'occasione l'abbiamo colta al volo e abbiamo creato loaDay.
+                  </div>
+              </div>
+          </div>
+
+          <!--Terza colonna-->
+          <div class="col-md-4 text-center">
+              <li class="listaAboutUs no-bullets" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                <a>Cosa sarà domani loaDay</a>
+              </li>
+              <!--Terzo collapse-->
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree">
+                  <div class="card-body">
+                      Ci siamo chiesti come potrà crescere questa piattaforma e abbiamo deciso di continuare a svilupparla per poter essere utilizzata non solo da noi ma anche da tutte le persone che troveranno utile loaDay!
+                  </div>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </body>
+</html>
