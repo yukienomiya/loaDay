@@ -59,4 +59,197 @@
 
 .no-bullets {
     list-style-type: none;
+
+progress {
+  margin-top: 10px;
+  border-radius: .9em; 
+  width: 70%;
+  height: 45px;
+}
+progress::-webkit-progress-bar {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(82, 77, 242, 0.48);
+  background-color: rgb(255, 255, 255);
+  border-radius: .9em;
+}
+progress::-webkit-progress-value {
+  border-radius: .7em; 
+  background-color: rgba(82, 77, 242, 0.48);
+}
+
+.bar-text {
+  color: grey;
+  font-weight: 500;
+  padding-top: 13px;
+}
+
+.section-title {
+  padding-left: 15px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.section-content {
+  margin-bottom: 20px;
+}
+
+.task {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+.task-content {
+  align-items: center;
+  padding-left: 15px;
+}
+
+.task-cb {
+  float: left;
+}
+
+.task-cb-label {
+  margin-left: 0px;
+  padding-left: 20px;
+}
+
+.task-delete-btn {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  position: absolute;
+  right: 20px;
+}
+
+.logo {
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+.bg-grey {
+  background-color: #707070;
+}
+
+.sections {
+  margin-top: 50px;
+}
+
+.first-section {
+  margin-bottom: 20px;
+}
+
+.deadline {
+  display:flex;
+  width: 250px;
+  height: 60px;
+  border-color: rgb(189, 140, 204);
+  border-radius: 1.75em;
+  border-style: solid;
+  border-width: 1.5px;
+  margin-bottom: 20px;
+}
+
+.deadline-add {
+  display:flex;
+  width: 250px;
+  height: 60px;
+  border-color: rgb(189, 140, 204);
+  border-radius: 1.75em;
+  border-style: solid;
+  border-width: 1.5px;
+  margin-bottom: 20px;
+  background-color: rgb(189, 140, 204);
+  align-items: center;
+  color: white;
+  font-weight: 600;
+}
+
+.deadline-add:hover {
+  border-color: rgb(129, 96, 139);
+  background-color: rgb(129, 96, 139);
+  color: white;
+}
+
+.deadline-add:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0rem;
+          box-shadow: 0 0 0 0rem;
+}
+
+.deadline-add-fields {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.deadline-time {
+  font-weight: 600;
+  font-size: large;
+  margin-bottom: 0px;
+  color: #2e2e2e;
+}
+
+.deadline-text {
+  overflow: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #707070;
+}
+
+.deadline-btn {
+  display : none;
+  background-color: white;
+  border-color: white;
+  color: #555555;
+  font-weight: 500;
+  align-self: center;
+}
+
+.text-grey {
+  color: #707070;
+}
+
+.footer {
+  height: 80px;
+  padding-top: 30px;
+  margin-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.content {
+  margin-bottom: 200px;
+  margin-top: 25px;
+}
+
+.bg-lightgrey {
+  background-color: #E7E7E7;
+}
+
+.bg-lilac {
+  background-color: rgb(189, 140, 204);
+  color: white;
+}
+
+.not-roundedL {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-right: 10px;
+}
+
+.no-tasks {
+  padding-left: 0px;
+  color: #707070;
+}
+
+.no-shadow:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.0rem;
+          box-shadow: 0 0 0 0.0rem;
+}
+
+.completedTask {
+  text-decoration: line-through;
+  color: #707070;
 }

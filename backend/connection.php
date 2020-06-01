@@ -1,12 +1,14 @@
 <?php
     $servername = "localhost";
     $username = "root";
-    $password = "Info_26654";
+    $password = "";
     $db = "my_loaday";
     
+    // Create connection
     $conn = new mysqli($servername, $username, $password, $db);
-    if($conn->connect_error){
-        die('Errore di connessione('. $conn->connect_errno . ')' . $conn->connect_error);
-    } else {
-        echo'Connesso. ' . $conn->host_info . "\n";
+
+    // Check connection
+    if(!$conn) {
+        die("Connection failed: " . $conn->connect_error);
     }
+?>
