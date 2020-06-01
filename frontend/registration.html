@@ -40,47 +40,40 @@
         </nav>
         <!--REGISTRAZIONE-->
         <div class="middle">    <!--centra l'immagine nella pagina rispetto ai bordi-->
-            <img src="../loaDayImage.jpg" alt="Logo di loaDay" class="img-fluid">
+            <img src="../anteprima_logo.JPG" alt="Logo di loaDay" class="img-fluid">
         </div>
         <div class="container-md themed-container"> <!--crea un "contenitore" per la pagina-->
-            <h3 class="welcome-margin">Benvenuto, inserisci i tuoi dati per effettuare la registrazione!</h3>
-            <h7>I campi contrassegnati da un asterisco sono obbligatori</h7>
+            <h3 class="welcome-margin">Benvenuto, inserisci i tuoi dati per effettuare la registrazione!</h3>   <!--aggiunge un titolo nella pagina-->
+            <h7>I campi contrassegnati da un asterisco sono obbligatori</h7>    <!--aggiunge un titolo nella pagina-->
             <!--<div class="form-group">-->
-            <form action="../Backend/myRegistration.php" class="form-registration" method="post" name="formRegistration" onsubmit="return validaForm()">
+            <form action="../Backend/myRegistration.php" class="form-registration" method="post" name="formRegistration" onsubmit="return validaForm()">    <!--crea un form-->
                 <!--Nome-->
-                <input type="text" name="inputName" class="form-control" placeholder="Nome*" autofocus required/>
+                <input type="text" name="inputName" class="form-control" placeholder="Nome*" autofocus required/>   <!--elemento di tipo input text per il nome-->
                 <br>
                 <!--Cognome-->
-                <input type="text" name="inputSurname" class="form-control" placeholder="Cognome*" required/>
+                <input type="text" name="inputSurname" class="form-control" placeholder="Cognome*" required/>      <!--elemento di tipo input text per il cognome-->
                 <br>
                 <!--Email-->
-                <input type="email" name="inputEmail" class="form-control" placeholder="Email*" required/>
+                <input type="email" name="inputEmail" class="form-control" placeholder="Email*" required/>  <!--elemento di tipo input mail per la mail-->
                 <br>
                 <!--Password-->
-                <input type="password" name="inputPassword" class="form-control" placeholder="Password*" required/>
+                <input type="password" name="inputPassword" class="form-control" placeholder="Password*" required/> <!--elemento di topo input password per la password-->
                 <br>
                 <!--Data di nascita-->
                 Data di nascita:
-                <input type="date" name="inputDDN" class="form-control">
+                <input type="date" name="inputDDN" class="form-control">    <!--elemento di tipo data per la data di nascita-->
                 <br>
                 <!--Genere-->
-                <div class="form-check form-check-inline">
+                <div class="form-check form-check-inline">  <!--crea due elementi di tipo radio per la selezione del genere-->
                     Genere:&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="genere" value="uomo">M &nbsp;&nbsp;&nbsp;
                     <input type="radio" name="genere" value="donna">F
                 </div>
-                <!--<br>
-                <br>
-                Scegli un'immagine del profilo:
-                <br>
-                <input type="file" name="inputImage"/>-->
-                <br>
-                <br>
-                <div class="middle margin-buttom">
-                    <button type="submit" name="registrationButton" class="btn btn-secondary active">Iscriviti</button>
+                <div class="middle margin-submit-small margin-buttom">  <!--elementi per il padding-->
+                    <button type="submit" name="registrationButton" class="btn btn-secondary active">Iscriviti</button> <!--crea un bottone per l'invio del form-->
                     <br>
                     <br>
-                    <h7>Sei già registrato? <a href=../../Frontend/login.html> Effettua il login</a> </h7>
+                    <h7>Sei già registrato? <a href=../../Frontend/login.html> Effettua il login</a> </h7>  <!--crea un titoletto per andare alla pagina di login-->
                 </div>
             </form>
         </div>
