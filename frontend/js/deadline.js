@@ -4,7 +4,7 @@ function saveDeadline(e) {
   e.preventDefault();
   var deadlineDate = $("#deadlineDate").val();
   var generalDate = changeDateFormat(deadlineDate);
-  var t = getCountdown(new Date(generalDate));
+  var countdown = getCountdown(new Date(generalDate));
   var deadlineDescription = $("#deadlineDescription").val();
 
   //chiamata ajax per salvare la dl del DB
@@ -19,8 +19,9 @@ function saveDeadline(e) {
       $("#newDeadline").modal('toggle');
 
       // template per la nuova deadline
+      // response: the deadline's ID, returned from addDeadline.php
       var newDeadline = `
-      <div id="deadline-time" class="deadline-content deadline-time text-center text-justify">${t}</div>
+      <div id="deadline-time" class="deadline-content deadline-time text-center text-justify">${countdown}</div>
       <div id="deadline-text" class="deadline-content deadline-text text-center text-justify">${deadlineDescription}</div>
       <button class="btn deadline-btn btn-sm">DELETE</button>
       <input name="deadlineID" type="text" value="${response}" hidden>

@@ -8,6 +8,7 @@
           minDate: new Date()
         });
       });
+      
       $("#deadlinesList").on("click", ".deadline", function(e) {
         var el = this;
         // se l'evento non e stato scatenato dal div principale (lo user ha cliccato su uno degli altri elementi contenuti nel div principale)
@@ -98,7 +99,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form method="post" id="newDeadlineForm">
+            <form method="POST" id="newDeadlineForm">
               <div class="modal-body">
                 <div class="input-group date deadline-add-fields" id="datetimepicker5" data-target-input="nearest">
                   <input name="deadlineDate" id="deadlineDate" type="text" class="form-control datetimepicker-input" data-target="#datetimepicker5"
