@@ -8,6 +8,7 @@
     <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/deadline.js"></script>
+    <script type="text/javascript" src="js/task.js"></script>
 
     <script src="node_modules/countdown/countdown.js"></script>
     <script type="text/javascript" src="node_modules/moment/min/moment-with-locales.min.js"></script>
@@ -23,11 +24,18 @@
         $("#deadlines").load("components/deadlines.html");
         $("#footer").load("components/footer.html");
       });
+
+      $(document).ready(function () {
+        $("#addTaskForm").submit(function (e) {
+          saveTask(e);
+        });
+      });
     </script>
   </head>
 
   <body onload=getDate()>
     <div id="navbar"></div>
+
     <div class="container content">
 
       <h2 id="date"></h2>
@@ -39,46 +47,29 @@
       <div class="row">
         <div class="col-lg-8 col-sm-12 sections">
           <div>
-            <form action="addTask.php" method="POST">
+            <form id="addTaskForm" method="POST">
               <div class="input-group first-section">
-                <input type="text" class="form-control" aria-label="Text input with segmented dropdown button"
-                  placeholder="Add new task">
+                <input name="taskDescription" id="taskDescription" type="text" class="form-control" aria-label="Text input with segmented dropdown button"
+                  placeholder="Inserisci un nuovo task" required>
                 <div class="input-group-append">
-                  <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split not-rounded"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Today</a>
-                    <a class="dropdown-item" href="#">Tomorrow</a>
-                    <a class="dropdown-item" href="#">Someday</a>
-                  </div>
-                  <button type="button" class="btn btn-outline-secondary">ADD</button>
+                  <select name="taskCategory" id="taskCategory" class="form-control not-roundedL no-shadow" required>
+                    <option value="none" selected disabled hidden>Categoria</option>
+                    <option value="oggi">Oggi</option>
+                    <option value="domani">Domani</option>
+                    <option value="in futuro">In Futuro</option>
+                  </select>
+                  
+                  <button name="addTaskButton" type="submit" class="btn btn-outline-secondary roundedR">SALVA</button>
                 </div>
               </div>
             </form>
-            <p class="bg-primary text-white section-title">TODAY</p>
-            <ul class="list-group section-content">
-              <li class="list-group-item task">
-                <div class="row task-content">
-                  <input type="checkbox" id="task1" class="task-cb">
-                  <div class="col-11 text-justify text-break task-cb-label" for="task1">
-                    Task 1</div>
-                  <button class="btn task-delete-btn"><i class="fa fa-times"></i></button>
-                </div>
-              </li>
-              <li class="list-group-item task">
-                <div class="row task-content">
-                  <input type="checkbox" id="task2" class="task-cb">
-                  <div class="col-11 text-justify text-break task-cb-label" for="task2">
-                    Task 2</div>
-                  <button class="btn task-delete-btn"><i class="fa fa-times"></i></button>
-                </div>
-              </li>
+            <p class="bg-primary text-white section-title">OGGI</p>
+            <ul class="list-group section-content" id="todayTaskSection">
+              
             </ul>
 
-            <p class="bg-secondary text-white section-title">TOMORROW</p>
-            <ul class="list-group section-content">
+            <p class="bg-secondary text-white section-title">DOMANI</p>
+            <ul class="list-group section-content" id="tomorrowTaskSection">
               <li class="list-group-item task">
                 <div class="row task-content">
                   <input type="checkbox" id="task1" class="task-cb">
@@ -97,8 +88,8 @@
               </li>
             </ul>
 
-            <p class="bg-grey text-white section-title">SOMEDAY</p>
-            <ul class="list-group section-content">
+            <p class="bg-grey text-white section-title">IN FUTURO</p>
+            <ul class="list-group section-content" id="somedayTaskSection">
               <li class="list-group-item task">
                 <div class="row task-content">
                   <input type="checkbox" id="task1" class="task-cb">
