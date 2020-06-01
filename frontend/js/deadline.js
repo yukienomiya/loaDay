@@ -1,4 +1,4 @@
-//al click sul bottone addDeadline
+// funzione chiamata al click sul bottone addDeadline
 function saveDeadline(e) {
   //prendo i dati in input
   e.preventDefault();
@@ -7,7 +7,7 @@ function saveDeadline(e) {
   var countdown = getCountdown(new Date(generalDate));
   var deadlineDescription = $("#deadlineDescription").val();
 
-  //chiamata ajax per salvare la dl del DB
+  // chiamata ajax per salvare la deadline del DB
   $.ajax({
     type: "POST",
     url: "../../backend/addDeadline.php",
@@ -19,11 +19,17 @@ function saveDeadline(e) {
       $("#newDeadline").modal('toggle');
 
       // template per la nuova deadline
-      // response: the deadline's ID, returned from addDeadline.php
+      // response: ID della deadline, preso come risposta da addDeadline.php
       var newDeadline = `
+      <!-- 0: countdown -->
       <div id="deadline-time" class="deadline-content deadline-time text-center text-justify">${countdown}</div>
+      <!-- 1: descrizione -->
       <div id="deadline-text" class="deadline-content deadline-text text-center text-justify">${deadlineDescription}</div>
+      <!-- 2: bottone DELETE (displayed on click) -->
       <button class="btn deadline-btn btn-sm">DELETE</button>
+      <!-- 3: data deadline (hidden) -->
+      <input name="deadlineDate" type="text" value="${generalDate}" hidden>
+      <!-- 4: id deadline (hidden) -->
       <input name="deadlineID" type="text" value="${response}" hidden>
       `
 
@@ -43,6 +49,8 @@ function saveDeadline(e) {
   });
 }
 
+
+// creo il countdown con queste determinate caratterisitche
 function getCountdown(date) {
   countdown.setLabels(
     ' ms |s |M |H |DD ',
@@ -74,4 +82,21 @@ function changeDateFormat(dateStr) {
   var hour = timeSplit[0];
   var minute = timeSplit[1];
   return month + " " + day + ", " + year + " " + hour + ":" + minute + ":" + "00";
+}
+
+
+// funzione chiamata ogni secondo per aggiornare i countdown
+function updateCountdown() {
+  //Prendo tutti i figli di deadlinesList e per ognuno aggiorno il countdown
+  var dlList = Array.from(document.getElementById("deadlinesList").children);
+  dlList.forEach(el => {
+    var dlDate = el.children[3].value;
+    var newCountdown = getCountdown(new Date(dlDate));
+    el.children[0].textContent = newCountdown;
+  });
+}
+
+
+function resetDeadlineForm() {
+  $("#newDeadlineForm").trigger("reset");
 }

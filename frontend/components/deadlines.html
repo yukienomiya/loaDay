@@ -8,7 +8,12 @@
           minDate: new Date()
         });
       });
-      
+
+      // aggiornamento countdown per le deadlines
+      setInterval(function() {
+        updateCountdown();
+      }, 1000); //Every 1000ms = 1sec
+
       $("#deadlinesList").on("click", ".deadline", function(e) {
         var el = this;
         // se l'evento non e stato scatenato dal div principale (lo user ha cliccato su uno degli altri elementi contenuti nel div principale)
@@ -111,7 +116,7 @@
                 <input name="deadlineDescription" id="deadlineDescription" type="text" class="col-12 form-control deadline-add-fields" placeholder="Scrivi una descrizione" required>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCELLA</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="resetDeadlineForm()">CANCELLA</button>
                 <button name="addDeadline" id="addDeadline" type="submit" class="btn bg-lilac">SALVA</button>
               </div>
             </form>
