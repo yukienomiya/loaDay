@@ -25,7 +25,8 @@
         if(empty($errorMSG)){
             if(mysqli_num_rows($result)) {
                 $_SESSION['email'] = $email;
-                $_SESSION['name'] = $result[0];
+                $row = mysqli_fetch_row($result);
+                $_SESSION['name'] = $row[0];
                 echo json_encode(['code'=>200]);
                 exit;
             }
@@ -34,6 +35,7 @@
     else
     {
         header('HTTP/1.1 401 Unauthorized');
+        exit;
     }
 
     
