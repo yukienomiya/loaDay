@@ -25,6 +25,7 @@
         if(empty($errorMSG)){
             if(mysqli_num_rows($result)) {
                 $_SESSION['email'] = $email;
+                $_SESSION['name'] = $result[0];
                 echo json_encode(['code'=>200]);
                 exit;
             }
