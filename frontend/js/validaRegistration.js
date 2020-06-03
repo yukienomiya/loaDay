@@ -23,6 +23,11 @@ function validaForm(){     //funzione che controlla se il form è stato compilat
         return false;
     }
 
+    if(document.formRegistration.inputPassword.value != document.formRegistration.inputPassword_2.value) {
+        alert("Le due password inserite non corrispondo");
+        return false;
+    }
+
     var annoInserito = parseInt((document.formRegistration.inputDDN.value.substring(0, 4)), 10);    //prende l'anno dalla data inserita
     var meseInserito = parseInt((document.formRegistration.inputDDN.value.substring(5, 7)), 10);    //prende il mese dalla data inserita
     var giornoInserito = parseInt((document.formRegistration.inputDDN.value.substring(8, 10)), 10); //prende il giorno dalla data inserita

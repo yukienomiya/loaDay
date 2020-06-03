@@ -5,7 +5,7 @@
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 1px;
-  padding: 30px;
+  padding: 10px;
 }
 
 .container-position {
@@ -94,6 +94,12 @@
 
 .view, body, html {
   height: 100%;
+}
+
+//profile.html
+.col-form-label {
+  /* padding-top: calc(.375rem + 1px); */
+  padding-top: calc(.375rem + 10px);
 }
 
 a:not([href]) {
