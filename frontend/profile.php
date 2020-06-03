@@ -58,17 +58,18 @@ if(isset($_SESSION['email']))
             <!--Elemento principale-->
             <!--Nome-->
             <div class="form-group row mt-5">
-                <label for="colFormLabel" class="col-sm-1 col-form-label">Nome</label>
+                <label for="colFormLabel" class="col-sm-1 col-form-label">Nome:</label>
                 <div class="col-sm-8">
                     <div class="card">
                         <div class="card-body">
-                            NomeInserito
+                        <?php echo $_SESSION['name']?>
                         </div>
                     </div>
                 </div>
                 <label for="colFormLabel" class="col-sm-1 col-form-label" data-toggle="modal" data-target="#modalForm">change</label>
                 <!--<button type="button" class="btn btn-info btn-lg btn-open" data-toggle="modal" data-target="#modalForm">Change</button>-->
 
+                <!--popUp_Nome-->
                 <div class="container-fluid">
                     <div class="row">
                         <div class="modal fade" role="dialog" id="modalForm">
@@ -80,10 +81,106 @@ if(isset($_SESSION['email']))
                                     </div>
                                     <div class="modal-body">
                                         <div class="form">
+                                        <form id="formChangeName" action="../Backend/dataChange.php" class="form-registration" method="post" name="formRegistration">    <!--crea un form per cambiare nome-->
                                             <form class="form-group">
                                                 <div class="form-group">
-                                                    <label>Name:</label>
-                                                    <input type="text" name="name" class="form-control">
+                                                    <input type="text" name="inputName" class="form-control" placeholder="Nome" autofocus required/>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-info btn-lg btn-submit" type="submit">Save</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--Cognome-->
+            <div class="form-group row mt-5">
+                <label for="colFormLabel" class="col-sm-1 col-form-label">Cognome:</label>
+                <div class="col-sm-8">
+                    <div class="card">
+                        <div class="card-body">
+                        <?php echo $_SESSION['surname']?>
+                        </div>
+                    </div>
+                </div>
+                <label for="colFormLabel" class="col-sm-1 col-form-label" data-toggle="modal" data-target="#modalFormSurname">change</label>
+
+                <!--popUp_Cognome-->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="modal fade" role="dialog" id="modalFormSurname">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Inserisci il cognome</h4>
+                                        <button class="close" type="button" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form">
+                                            <form class="form-group">
+                                                <div class="form-group">
+                                                    <input type="text" name="inputSurname" class="form-control" placeholder="Cognome" required/>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-info btn-lg btn-submit" type="submit">Save</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--Email-->
+            <div class="form-group row mt-5">
+                <label for="colFormLabel" class="col-sm-1 col-form-label">Email</label>
+                <div class="col-sm-8">
+                    <div class="card">
+                        <div class="card-body">
+                        <?php echo $_SESSION['email']?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Password-->
+            <div class="form-group row mt-5">
+                <label for="colFormLabel" class="col-sm-1 col-form-label">Password</label>
+                <div class="col-sm-8">
+                    <div class="card">
+                        <div class="card-body">
+                        <?php echo $_SESSION['password']?>
+                        </div>
+                    </div>
+                </div>
+                <label for="colFormLabel" class="col-sm-1 col-form-label" data-toggle="modal" data-target="#modalFormPassword">change</label>
+
+                <!--popoUp_Password-->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="modal fade" role="dialog" id="modalFormPassword">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Inserisci la password</h4>
+                                        <button class="close" type="button" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form">
+                                            <form class="form-group">
+                                                <div class="form-group">
+                                                    <input type="password" name="inputPassword" class="form-control" placeholder="Password" required/>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button class="btn btn-info btn-lg btn-submit" type="submit">Save</button>
@@ -98,55 +195,45 @@ if(isset($_SESSION['email']))
                 </div>
             </div>
 
-            <!--Cognome-->
-            <div class="form-group row mt-5">
-                <label for="colFormLabel" class="col-sm-1 col-form-label">Cognome</label>
-                <div class="col-sm-8">
-                    <div class="card">
-                        <div class="card-body">
-                        CognomeInserito
-                        </div>
-                    </div>
-                </div>
-                <label for="colFormLabel" class="col-sm-1 col-form-label">change</label>
-            </div>
-
-            <!--Email-->
-            <div class="form-group row mt-5">
-                <label for="colFormLabel" class="col-sm-1 col-form-label">Email</label>
-                <div class="col-sm-8">
-                    <div class="card">
-                        <div class="card-body">
-                            EmailInserita
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--Password-->
-            <div class="form-group row mt-5">
-                <label for="colFormLabel" class="col-sm-1 col-form-label">Password</label>
-                <div class="col-sm-8">
-                    <div class="card">
-                        <div class="card-body">
-                            PasswordInserita
-                        </div>
-                    </div>
-                </div>
-                <label for="colFormLabel" class="col-sm-1 col-form-label">change</label>
-            </div>
-
             <!--Data di nascita-->
             <div class="form-group row mt-5">
                 <label for="colFormLabel" class="col-sm-1 col-form-label">Data di nascita</label>
                 <div class="col-sm-8">
                     <div class="card">
                         <div class="card-body">
-                            DDN_Inserita
+                        <?php echo $_SESSION['dataDiNascita']?>
                         </div>
                     </div>
                 </div>
-                <label for="colFormLabel" class="col-sm-1 col-form-label">change</label>
+                <label for="colFormLabel" class="col-sm-1 col-form-label" data-toggle="modal" data-target="#modalFormDDN">change</label>
+                
+                <!--popUp_DataDiNascita-->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="modal fade" role="dialog" id="modalFormDDN">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Inserisci la data di nascita</h4>
+                                        <button class="close" type="button" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form">
+                                            <form class="form-group mt-5 mb-5">
+                                                <div class="form-group">
+                                                    <input type="date" name="inputDDN" class="input-group date" required>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-info btn-lg btn-submit" type="submit">Save</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!--Genere-->
@@ -155,11 +242,42 @@ if(isset($_SESSION['email']))
                 <div class="col-sm-8">
                     <div class="card">
                         <div class="card-body">
-                            GenereInserito
+                        <?php echo $_SESSION['genere']?>
                         </div>
                     </div>
                 </div>
-                <label for="colFormLabel" class="col-sm-1 col-form-label">change</label>
+                <label for="colFormLabel" class="col-sm-1 col-form-label" data-toggle="modal" data-target="#modalFormGenere">change</label>
+
+                <!--popUp_Genere-->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="modal fade" role="dialog" id="modalFormGenere">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Scegli il genere</h4>
+                                        <button class="close" type="button" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form">
+                                            <form class="form-group">
+                                                <div class="form-group">
+                                                    <div class="form-check form-check-inline">  <!--crea due elementi di tipo radio per la selezione del genere-->
+                                                        <input type="radio" name="genere" value="uomo" required>M &nbsp;&nbsp;&nbsp;
+                                                        <input type="radio" name="genere" value="donna" required>F
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-info btn-lg btn-submit" type="submit">Save</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
