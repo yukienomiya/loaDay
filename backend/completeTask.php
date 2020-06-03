@@ -9,7 +9,14 @@
         $completed = $_POST["taskCompleted"];
         /* $user = $_SESSION['email']; */
 
-        $sql = "UPDATE tasks SET completato = '$completed' WHERE tasks.id = '$id'";
+        if($completed)
+        {
+            $oggi = date("Y-m-d");
+            $sql = "UPDATE tasks SET completato = '$completed', done_date = '$oggi' WHERE tasks.id = '$id'";
+        }
+        else
+            $sql = "UPDATE tasks SET completato = '$completed', done_date = NULL WHERE tasks.id = '$id'";
+        
     
         if (!$conn -> query($sql)) { // se qualcosa e andato storto
           die($mysqli -> error);
