@@ -12,38 +12,12 @@
     </head>
     
     <body>
-        <!--NAVBAR-->
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">
-            <img src="../media/logo.png" class="d-inline-block align-top logo" width="110px" alt="">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
-            aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarsExample05">
-            <ul class="navbar-nav ml-auto">
-                <li>
-                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Profilo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="aboutUs.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">logout</a>
-                </li>
-            </ul>
-        </div>
-        </nav>
         <!--REGISTRAZIONE-->
-        <div class="middle">    <!--centra l'immagine nella pagina rispetto ai bordi-->
-            <img src="../anteprima_logo.JPG" alt="Logo di loaDay" class="img-fluid">
+        <div class="text-center">    <!--centra l'immagine nella pagina rispetto ai bordi-->
+            <img src="../media/logo.png" alt="Logo di loaDay" class="img-fluid">
         </div>
         <div class="container-md themed-container"> <!--crea un "contenitore" per la pagina-->
-            <h3 class="welcome-margin">Benvenuto, inserisci i tuoi dati per effettuare la registrazione!</h3>   <!--aggiunge un titolo nella pagina-->
+            <h3 class="mb-3">Benvenuto, inserisci i tuoi dati per effettuare la registrazione!</h3>   <!--aggiunge un titolo nella pagina-->
             <h7>I campi contrassegnati da un asterisco sono obbligatori</h7>    <!--aggiunge un titolo nella pagina-->
             <!--<div class="form-group">-->
             <form action="../Backend/registration.php" class="form-registration" method="post" name="formRegistration" onsubmit="return validaForm()">    <!--crea un form-->
@@ -69,11 +43,11 @@
                     <input type="radio" name="genere" value="uomo">M &nbsp;&nbsp;&nbsp;
                     <input type="radio" name="genere" value="donna">F
                 </div>
-                <div class="text-center mt-4 mb-4">  <!--elementi per il padding-->
+                <div class="text-center mt-5 mb-5">  <!--elementi per il padding-->
                     <button type="submit" name="registrationButton" class="btn btn-secondary active">Iscriviti</button> <!--crea un bottone per l'invio del form-->
                     <br>
                     <br>
-                    <h7>Sei già registrato? <a href=../../Frontend/login.html> Effettua il login</a> </h7>  <!--crea un titoletto per andare alla pagina di login-->
+                    <h7>Sei già registrato? <a href="index.php"> Effettua il login</a> </h7>  <!--crea un titoletto per andare alla pagina di login-->
                 </div>
             </form>
         </div>
