@@ -8,8 +8,9 @@
       $description = $_POST["taskDescription"];
       $category = $_POST["taskCategory"];
       $user = $_SESSION['email'];
+      $date = date("Y-m-d");
 
-      $sql = "INSERT INTO tasks (id, descr, completato, category, user_email) VALUES (NULL, '$description', 0, '$category', '$user')";
+      $sql = "INSERT INTO tasks (descr, completato, category, user_email, create_date) VALUES ('$description', 0, '$category', '$user', '$date')";
       if ($conn->query($sql)) {
         // prendo l'id dell'elemento (l'ultimo inserito)
         $last_id = $conn->insert_id;

@@ -9,8 +9,17 @@ function validaForm(){     //funzione che controlla se il form è stato compilat
         return false;
     }
 
-    if(document.formRegistration.inputPassword.value.length<8){ //controlla che la password sia lunga almeno 8 caratteri
-        alert("La password deve essere lunga almeno 8 caratteri");  //se non supera il controllo lancia un alert in cui spiega il motivo
+    var pattern = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/;
+    var email = document.formRegistration.inputEmail.value;
+    if(!(pattern.test(email))) { //controlla che il formato dell'email sia corretto
+        alert("Formato email non valido");  //se non supera il controllo lancia un alert in cui spiega il motivo
+        return false;
+    }
+
+    var pattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+    var password = document.formRegistration.inputPassword.value;
+    if(!(pattern.test(password))) { //controlla che la password sia min 8 caratteri, almeno 1 numero e almeno 1 carattere speciale
+        alert("La password deve essere lunga almeno 8 caratteri, almeno 1 numero e almeno 1 carattere speciale");  //se non supera il controllo lancia un alert in cui spiega il motivo
         return false;
     }
 

@@ -43,7 +43,7 @@
                 </div>
                 <div class="card-body">
                   <!-- Form -->
-                  <form id="loginform" class="needs-validation" novalidate method="POST">
+                  <form id="loginform" class="needs-validation" novalidate method="POST" action="../backend/login.php">
                     <div class="form-row">
                       <div class="input-group form-control-lg">
                         <span class="input-group-prepend">
@@ -71,6 +71,12 @@
                           </div>
                         </div>
                         <input id="pass" type="password" class="form-control" name="pass" required placeholder="Password">
+                        <div class="input-group-append">
+                          <div class="input-group-text">
+                            <label id="scritta" class="form-check-label mr-2" for="show">Mostra</label>
+                            <input id="show" type="checkbox">
+                          </div>
+                        </div>
                         <div class="invalid-feedback">
                           Password non valida!
                         </div>
@@ -80,7 +86,7 @@
                     <div class="text-center mt-4">
                       <button id="login" type="submit" name="login" class="btn btn-accent mb-2">LOGIN</button>
                       <br>
-                      <small><a href="/registration.html" class="btn-link">Non sei registrato? Clicca qui!</a></small>
+                      <small><a href="registration.html" class="btn-link">Non sei registrato? Clicca qui!</a></small>
                     </div>
                   </form>
                 </div>

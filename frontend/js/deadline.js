@@ -10,7 +10,7 @@ function saveDeadline(e) {
   // chiamata ajax per salvare la deadline del DB
   $.ajax({
     type: "POST",
-    url: "../../backend/addDeadline.php",
+    url: "../backend/addDeadline.php",
     data: "deadlineDate=" + deadlineDate + "&deadlineDescription=" + deadlineDescription,
     dataType: "html",
 
