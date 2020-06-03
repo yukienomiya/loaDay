@@ -1,6 +1,6 @@
 <?php session_start();
-if(isset($_SESSION['email']))
-{
+/*if(isset($_SESSION['email']))
+{*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,6 +19,7 @@ if(isset($_SESSION['email']))
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="main.css">
 
     </head>
 
@@ -164,20 +165,11 @@ if(isset($_SESSION['email']))
     </body>
 </html>
 <?PHP
-}
+/*}
 else{
     header('HTTP/1.1 401 Unauthorized');
-exit;}?>
+exit;}*/?>
 
 <!--
-//profile.html
-.col-form-label {
-  /* padding-top: calc(.375rem + 1px); */
-  padding-top: calc(.375rem + 10px);
-}
 
-body {
-  /* text-align: left; */
-  text-align: right;
-}
 -->

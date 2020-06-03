@@ -10927,4 +10927,14 @@ a.text-dark:hover, a.text-dark:focus {
 .view, body, html {
   height: 100%;
 }
+
+.col-form-label {
+  /* padding-top: calc(.375rem + 1px); */
+  padding-top: calc(.375rem + 10px);
+}
+
+body {
+  /* text-align: left; */
+  text-align: left;
+}
 /*# sourceMappingURL=main.css.map */
