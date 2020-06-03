@@ -10823,7 +10823,7 @@ a.text-dark:hover, a.text-dark:focus {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 1px;
-  padding: 30px;
+  padding: 10px;
 }
 
 .container-position {
