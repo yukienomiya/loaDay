@@ -6,8 +6,7 @@
     if(isset($_POST["deadlineDate"]))
     {
         $description = $_POST["deadlineDescription"];
-        /* $user = $_SESSION['email']; */
-        $user = 'nom@gmail.com';
+        $user = $_SESSION['email'];
 
         // cambio formato data
         $date = date_create_from_format("d/m/Y H:i", $_POST['deadlineDate']);
