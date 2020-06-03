@@ -10905,10 +10905,6 @@ a.text-dark:hover, a.text-dark:focus {
   border-bottom-left-radius: 0.25rem;
 }
 
-.navbar {
-  background-color: #1C2331;
-}
-
 .form-row {
   margin-bottom: 30px;
 }
@@ -10932,9 +10928,9 @@ a.text-dark:hover, a.text-dark:focus {
   /* padding-top: calc(.375rem + 1px); */
   padding-top: calc(.375rem + 10px);
 }
-
-body {
-  /* text-align: left; */
-  text-align: left;
+  
+a:not([href]) {
+  color: #707070;
+  text-decoration: none;
 }
 /*# sourceMappingURL=main.css.map */

@@ -78,10 +78,6 @@
   border-bottom-left-radius: 0.25rem;
 }
 
-.navbar {
-  background-color:#1C2331
-}
-
 .form-row {
   margin-bottom: 30px;
 }
@@ -106,7 +102,7 @@
   padding-top: calc(.375rem + 10px);
 }
 
-body {
-  /* text-align: left; */
-  text-align: left;
+a:not([href]) {
+  color: #707070;
+  text-decoration: none;
 }

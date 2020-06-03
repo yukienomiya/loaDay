@@ -5,7 +5,7 @@ function saveTask(e) {
 
   $.ajax({
     type: "POST",
-    url: "../../backend/addTask.php",
+    url: "../backend/addTask.php",
     data: "taskDescription=" + taskDescription + "&taskCategory=" + taskCategory,
     dataType: "html",
 
@@ -31,10 +31,10 @@ function saveTask(e) {
         taskList = document.getElementById("tomorrowTaskSection");
         $("#tomorrowTaskSection").prepend(newT);
       } else {
-        taskList = document.getElementById("tomorrowTaskSection");
+        taskList = document.getElementById("somedayTaskSection");
         $("#somedayTaskSection").prepend(newT);
       }
-      if (taskList.childElementCount == 2 && taskList.lastElementChild.name == "noTask") {
+      if (taskList.childElementCount == 2 && taskList.lastElementChild.id == "noTask") {
         $(taskList.lastElementChild).remove();
       }
 
@@ -66,7 +66,7 @@ function deleteTask() {
       if (taskList.childElementCount == 0) {
         var noTaskElement = document.createElement("LI");
         noTaskElement.className = "list-group-item task";
-        noTaskElement.name = "noTask"
+        noTaskElement.id = "noTask";
         var content = `
         <div class="row task-content">
           <div class="col-11 no-tasks">
@@ -92,9 +92,10 @@ function completeTask() {
   var p = taskCB.parentElement;
   var taskID = p.firstElementChild.value;
   var taskText = p.children[2];
+  
   // ajax call
   $.ajax({
-    url: "../../backend/completeTask.php",
+    url: "../backend/completeTask.php",
     type: "POST",
     data: "taskID=" + taskID + "&taskCompleted=" + completed,
     success: function () {
@@ -108,4 +109,8 @@ function completeTask() {
       alert("Il completamento non è andato a buon fine. Ritenta!");
     }
   });
+}
+
+function refreshPBar() {
+  
 }

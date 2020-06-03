@@ -18,17 +18,20 @@
             $email = $_POST["email"];
         }
 
-        $sql = "SELECT nome, cognome FROM users WHERE email = '$email' AND pass = '$pass'";
+        $sql = "SELECT nome, pass FROM users WHERE email = '$email'";
         $result = mysqli_query($conn, $sql);
         mysqli_close($conn);
-    
-        if(empty($errorMSG)){
-            if(mysqli_num_rows($result)) {
-                $_SESSION['email'] = $email;
-                $row = mysqli_fetch_row($result);
-                $_SESSION['name'] = $row[0];
-                echo json_encode(['code'=>200]);
-                exit;
+
+        $row = mysqli_fetch_row($result);
+        if(password_verify($pass, $row[1]))
+        {
+            if(empty($errorMSG)) {
+                if(mysqli_num_rows($result)) {
+                    $_SESSION['email'] = $email;
+                    $_SESSION['name'] = $row[0];
+                    echo json_encode(['code'=>200]);
+                    exit;
+                }
             }
         }
     }
