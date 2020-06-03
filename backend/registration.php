@@ -35,29 +35,6 @@
                         die($conn->error);
                     }
                 }
-
-                if(($ddn!="") && (isset($_POST['genere'])==false)){  //se il campo nascita è stato compilato ma genere no
-                    $q2="INSERT INTO users (email, pass, nome, cognome, dataDiNascita) VALUES ('$email','$password','$name','$surname','$ddn')"; //crea una nuova query per inserire i valori nella tabella
-                    if (!$conn->query($q2)) { //controlla se tutto è andato a buon fine
-                        die($conn->error);
-                    }
-                }
-
-                if(($ddn=="") && (isset($_POST['genere'])==true)){  //se il campo data di nascita non è stato compilato ma genere si
-                    $q2="INSERT INTO users (email, pass, nome, cognome, genere) VALUES ('$email','$password','$name','$surname','$genere')"; //crea una nuova query per inserire i valori nella tabella
-                    if (!$conn->query($q2)) { //controlla se tutto è andato a buon fine
-                        die($conn->error);
-                    }
-                }
-
-                else{
-                    if(($ddn=="") && (isset($_POST['genere'])==false)){  //se i campi data di nascita e genere non sono stati compilati
-                        $q2="INSERT INTO users (email, pass, nome, cognome) VALUES ('$email','$password','$name','$surname')"; //crea una nuova query per inserire i valori nella tabella
-                        if (!$conn->query($q2)) { //controlla se tutto è andato a buon fine
-                            die($conn->error);
-                        }
-                    }
-                }
             }
         ?>
     </body>
