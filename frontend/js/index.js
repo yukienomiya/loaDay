@@ -66,14 +66,11 @@ $(document).ready(function(){
         else if(!isValidPassword(password)) $(errori[1]).show();
         else
         {
-            var form = $(this);
-            var url = form.attr('action');
-
             var ajaxRequest =$.ajax({
                 type:'POST',
-                url: url,
-                dataType:'json',
-                data:{email:email, pass:password, login:login}
+                url: "../backend/login.php",
+                dataType: 'json',
+                data: { email: email, pass: password, login: login }
             });
 
             ajaxRequest.done(function(data){

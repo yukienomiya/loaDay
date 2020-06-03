@@ -100,3 +100,44 @@ function updateCountdown() {
 function resetDeadlineForm() {
   $("#newDeadlineForm").trigger("reset");
 }
+
+function getDeadlines() {
+  $.ajax({
+    type: "POST",
+    url: "../backend/getDeadlines.php",
+    success: function (result) {
+      // result e' una stringa contenente un json array - ogni json obj rappresenta una deadline
+      var cont = document.createElement("div");
+      var rows = JSON.parse(result);
+      rows.forEach(function(k) {
+        var date = k['data'];
+        var countdown = getCountdown(new Date(changeDateFormat(date)));
+        var description = k['descr'];
+        var id = k['id'];
+
+        var newDeadline = `
+        <!-- 0: countdown -->
+        <div id="deadline-time" class="deadline-content deadline-time text-center text-justify">${countdown}</div>
+        <!-- 1: descrizione -->
+        <div id="deadline-text" class="deadline-content deadline-text text-center text-justify">${description}</div>
+        <!-- 2: bottone DELETE (displayed on click) -->
+        <button class="btn deadline-btn btn-sm">DELETE</button>
+        <!-- 3: data deadline (hidden) -->
+        <input name="deadlineDate" type="text" value="${date}" hidden>
+        <!-- 4: id deadline (hidden) -->
+        <input name="deadlineID" type="text" value="${id}" hidden>
+        `
+
+        var newDL = document.createElement("div");
+        newDL.className = "col-10 deadline flex-column justify-content-center";
+        newDL.innerHTML = newDeadline;
+
+        cont.appendChild(newDL);
+      });
+      $("#deadlinesList").prepend(cont.innerHTML);
+    },
+    error: function() {
+      alert("La pagina non si è caricata correttamente.")
+    }
+  });
+}

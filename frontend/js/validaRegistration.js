@@ -35,7 +35,7 @@ function validaForm(){     //funzione che controlla se il form è stato compilat
     dataCorrente = giornoCorrente + meseCorrente*30 + annoCorrente*365; //calcola la data corrente in giorni
 
     if(dataCorrente-dataInserita<3650){ //controlla che la data inserita meno la data corrente non sia inferiore a 10 anni in giorni
-        alert("Data non valida, per utilizzare la piattaforma devi avere almeno 18 anni");  //se non supera il controllo lancia un alert in cui spiega il motivo
+        alert("Data non valida, per utilizzare la piattaforma devi avere almeno 10 anni");  //se non supera il controllo lancia un alert in cui spiega il motivo
         return false;
     }
     return true;

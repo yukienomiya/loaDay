@@ -1,3 +1,4 @@
+
 ﻿<?php
     //CONTROLLO SU COME SI E' ARRIVATI NELLA PAGINA
     if(!(isset($_POST['registrationButton']))){

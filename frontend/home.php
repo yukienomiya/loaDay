@@ -192,9 +192,8 @@
 
 <?php
   }
-  else
-  {
-    header('HTTP/1.1 401 Unauthorized');
+  else {
+    header("location: /frontend/index.php");
     exit;
   }
 ?>

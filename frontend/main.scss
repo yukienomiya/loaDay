@@ -78,10 +78,6 @@
   border-bottom-left-radius: 0.25rem;
 }
 
-.navbar {
-  background-color:#1C2331
-}
-
 .form-row {
   margin-bottom: 30px;
 }
@@ -98,4 +94,9 @@
 
 .view, body, html {
   height: 100%;
+}
+
+a:not([href]) {
+  color: #707070;
+  text-decoration: none;
 }
