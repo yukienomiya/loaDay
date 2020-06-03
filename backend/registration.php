@@ -4,7 +4,7 @@
         <?php
             //CONTROLLO SU COME SI E' ARRIVATI NELLA PAGINA
             if(!(isset($_POST['registrationButton']))){
-                header("Location: ../../Frontend/homeLoaDay.html");
+                header("Location: ../../frontend/homeLoaDay.html");
             }
 
             //CONNESSIONE AL DB
@@ -13,7 +13,7 @@
             //RACCOLTA DEI DATI INSERITI NELLA FORM
             $name=strtolower($_POST['inputName']);  //prende il nome appena inserito nella form
             $surname=strtolower($_POST['inputSurname']);    //prende il cognome appena inserito nella form
-            $email=strtolower($_POST['inputEmail']);    //prende il cognome appena inserito nella form
+            $email=strtolower($_POST['inputEmail']);    //prende la mail appena inserito nella form
             $password= hash('sha256',$_POST['inputPassword']); //prende la password appena inserita nella form e la codifica con una funzione hash
             $ddn=($_POST['inputDDN']);  //prende la data di nascita appena inserita nella form
             if((isset($_POST['genere'])==true)){  //controlla se è stato selezionato uno dei due radio

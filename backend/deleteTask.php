@@ -6,7 +6,6 @@
     if(isset($_POST["taskID"]))
     {
         $id = $_POST["taskID"];
-        /* $user = $_SESSION['email']; */
 
         $sql = "DELETE FROM tasks WHERE id = '$id'";
     

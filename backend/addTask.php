@@ -7,8 +7,7 @@
     {
       $description = $_POST["taskDescription"];
       $category = $_POST["taskCategory"];
-      /* $user = $_SESSION['email']; */
-      $user = 'nom@gmail.com';
+      $user = $_SESSION['email'];
 
       $sql = "INSERT INTO tasks (id, descr, completato, category, user_email) VALUES (NULL, '$description', 0, '$category', '$user')";
       if ($conn->query($sql)) {

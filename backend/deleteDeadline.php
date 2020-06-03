@@ -6,7 +6,6 @@
     if(isset($_POST["deadlineID"]))
     {
         $id = $_POST["deadlineID"];
-        /* $user = $_SESSION['email']; */
 
         $sql = "DELETE FROM deadlines WHERE id = '$id'";
     

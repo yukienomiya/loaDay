@@ -7,7 +7,6 @@
     {
         $id = $_POST["taskID"];
         $completed = $_POST["taskCompleted"];
-        /* $user = $_SESSION['email']; */
 
         $sql = "UPDATE tasks SET completato = '$completed' WHERE tasks.id = '$id'";
     

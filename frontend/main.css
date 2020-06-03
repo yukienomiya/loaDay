@@ -10905,10 +10905,6 @@ a.text-dark:hover, a.text-dark:focus {
   border-bottom-left-radius: 0.25rem;
 }
 
-.navbar {
-  background-color: #1C2331;
-}
-
 .form-row {
   margin-bottom: 30px;
 }
@@ -10926,5 +10922,10 @@ a.text-dark:hover, a.text-dark:focus {
 
 .view, body, html {
   height: 100%;
+}
+
+a:not([href]) {
+  color: #707070;
+  text-decoration: none;
 }
 /*# sourceMappingURL=main.css.map */

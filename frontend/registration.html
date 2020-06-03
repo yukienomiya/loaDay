@@ -4,49 +4,46 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width-device-width, initial-scale=1"/>
         <script type="text/javascript" lang="javascript" src="js/validaRegistration.js"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="main.css">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     
     <body>
         <!--NAVBAR-->
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">
-            <img src="../media/logo.png" class="d-inline-block align-top logo" width="110px" alt="">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
-            aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarsExample05">
-            <ul class="navbar-nav ml-auto">
-                <li>
-                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Profilo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="aboutUs.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">logout</a>
-                </li>
-            </ul>
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="#">
+              <img src="../media/logo.png" class="d-inline-block align-top logo" width="110px" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+              aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarsExample05">
+              <ul class="navbar-nav ml-auto">
+                  <li>
+                      <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Profilo</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="aboutUs.html">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">logout</a>
+                  </li>
+              </ul>
+          </div>
         </nav>
         <!--REGISTRAZIONE-->
-        <div class="middle">    <!--centra l'immagine nella pagina rispetto ai bordi-->
-            <img src="../anteprima_logo.JPG" alt="Logo di loaDay" class="img-fluid">
-        </div>
         <div class="container-md themed-container"> <!--crea un "contenitore" per la pagina-->
             <h3 class="welcome-margin">Benvenuto, inserisci i tuoi dati per effettuare la registrazione!</h3>   <!--aggiunge un titolo nella pagina-->
             <h7>I campi contrassegnati da un asterisco sono obbligatori</h7>    <!--aggiunge un titolo nella pagina-->
             <!--<div class="form-group">-->
-            <form action="../Backend/registration.php" class="form-registration" method="post" name="formRegistration" onsubmit="return validaForm()">    <!--crea un form-->
+            <form action="../backend/registration.php" class="form-registration" method="post" name="formRegistration" onsubmit="return validaForm()">    <!--crea un form-->
                 <!--Nome-->
                 <input type="text" name="inputName" class="form-control" placeholder="Nome*" autofocus required/>   <!--elemento di tipo input text per il nome-->
                 <br>
@@ -73,7 +70,7 @@
                     <button type="submit" name="registrationButton" class="btn btn-secondary active">Iscriviti</button> <!--crea un bottone per l'invio del form-->
                     <br>
                     <br>
-                    <h7>Sei già registrato? <a href=../../Frontend/login.html> Effettua il login</a> </h7>  <!--crea un titoletto per andare alla pagina di login-->
+                    <h7>Sei già registrato? <a href=../../frontend/login.html> Effettua il login</a> </h7>  <!--crea un titoletto per andare alla pagina di login-->
                 </div>
             </form>
         </div>
