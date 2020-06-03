@@ -9,7 +9,7 @@
 		<link href="style.css" rel="stylesheet">
 	  </head>
 	  <body>
-		<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+		<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar p-2">
 		  <div class="container">
 			<a class="navbar-brand" href="index.php">
 			  <strong>loaDay</strong>
@@ -41,7 +41,7 @@
 			  <div class="row">
 				<div class="col-md-6 mb-4 white-text text-center text-md-left">
 	  
-				  <h1 class="display-4 font-weight-bold">LoaDay</h1>
+				  <h1 class="display-4 font-weight-bold">LoaDay </h1>
 	  
 				  <hr class="hr-light">
 	  
@@ -68,7 +68,7 @@
 					</div>
 					<div class="card-body">
 					  <!-- Form -->
-					  <form id="loginform" class="needs-validation" novalidate method="POST" action="backend/login.php">
+					  <form id="loginform" class="needs-validation" novalidate method="POST" action="../backend/login.php">
 						<div class="form-row">
 							<div class="input-group form-control-lg">
 								<span class="input-group-prepend">
@@ -96,6 +96,12 @@
 									</div>
 								</div>
 								<input id="pass" type="password" class="form-control" name="pass" required placeholder="Password">
+								<div class="input-group-append">
+									<div class="input-group-text">
+										<label id="scritta" class="form-check-label mr-2" for="show">Mostra</label>
+										<input id="show" type="checkbox">
+									</div>
+								</div>
 								<div class="invalid-feedback">
 									Password non valida!
 								</div>
@@ -106,7 +112,7 @@
 						<div class="text-center mt-4">
 							<button id="login" type="submit" name="login" class="btn btn-primary">Invia</button>
 							<br>
-							<small><a href="PageSignIn/registration.html" class="btn-link">Non sei registrato? Clicca qui!</a></small>
+							<small><a href="registration.html" class="btn-link">Non sei registrato? Clicca qui!</a></small>
 						</div>
 					  </form>
 					</div>
@@ -118,7 +124,7 @@
 		</div>
 	  
 		<main>
-		  <div id="nascosta" class="container" style="display: none;">
+		  <div id="nascosta" class="container mb-4" style="display: none;">
 			<section class="mt-5">
 			  <div class="row">
 				<div class="col-md-6 mb-4">
@@ -156,7 +162,7 @@
 							  <img class="d-block w-100" src="../media/4.png" alt="Third slide">
 							  <div class="carousel-caption d-none d-md-block">
 								  <h5>Profilo</h5>
-									<p>LOREM IPSUM STO PIPOLO</p>
+									<p>Visualizza e modifica i tuoi dati</p>
 							  </div>
 						  </div>
 						  <div class="carousel-item">
@@ -182,7 +188,7 @@
 				  <h3 class="h3 mb-3">Benvenuto alla descrizione segreta</h3>
 				  <p>LoaDay nasce dall'idea di 3 ragazzi che dovevano svolgere l'esame di linguaggi e tecnologie per il web durante l'anno accademico 2019/2020</p>
 				  <p>Leggi i dettagli in basso per scoprire da quale pagine è formata LoaDay.</p>
-				  <p>Questa è soltanto una breve descrizione, <a href="PageSignIn/registration.html">registrati</a> e visita la pagina about us per saperne ancora di più!</p>
+				  <p>Questa è soltanto una breve descrizione, <a href="registration.html">registrati</a> e visita la pagina about us per saperne ancora di più!</p>
 
 				  <hr>
 
@@ -220,7 +226,7 @@
 		</footer>
 
 		<script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="js/index.js"></script>
 	  </body>
 </html>

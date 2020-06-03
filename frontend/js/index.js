@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-				
     $("#mostraNascosta").click(function(){
         $("#nascosta").toggle(500, function(){
                 if(!($("#nascosta").css('display') == 'none'))
@@ -17,7 +16,6 @@ $(document).ready(function(){
             });
     });
 
-
     $(".list-group-item").hover(function(){
         $(this).addClass('evidenzia');
     }, function(){
@@ -30,7 +28,7 @@ $(document).ready(function(){
     };
 
     function isValidPassword(password) {
-        var pattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&-_])[A-Za-z\d@$!%*#?&-_]{8,}$/; //min 8 caratteri, almeno 1 numero e almeno 1 carattere speciale
+        var pattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/; //min 8 caratteri, almeno 1 numero e almeno 1 carattere speciale
         return pattern.test(password);
     };
 
@@ -88,6 +86,17 @@ $(document).ready(function(){
                 $(errLogin).modal('show');
                 $('#loginform').trigger('reset');
             });
+        }
+    });
+
+    $('#show').change(function() {
+        if(this.checked) {
+            $('#pass').attr('type','text');
+            $("#scritta").text("Nascondi");
+        }
+        else {
+            $('#pass').attr('type','password');
+            $("#scritta").text("Mostra");
         }
     });
 });
