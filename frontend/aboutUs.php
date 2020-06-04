@@ -1,7 +1,12 @@
+<?php 
+  session_start();
+  if(isset($_SESSION['email']))
+  {
+?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>loaDay</title>   <!--titolo della pgina-->
+        <title>loaDay - About Us</title>   <!--titolo della pgina-->
         <meta charset="utf-8"/> <!--imposto la codifica della pagina-->
         <meta name="viewport" content="width-device-width, initial-scale=1"/>   <!--faccio in modo che la visualizzazione della pagina si adatti ad ogni tipo di dispositivo-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  <!--importo file jquery-->
@@ -36,7 +41,7 @@
             <div class="carousel-item" data-interval="700"> <!--setta l'intervallo di tempo tra un immagine e l'altra-->
               <img src="../media/anteprima_home.JPG" class="d-block w-100">   <!--seleziona la terza immagine del carosello-->
             </div>
-          </div>
+        </div>
 
           <!--FRECCETTE CAROSELLO-->
           <a class="carousel-control-prev" href="#carouselAboutUs" role="button" data-slide="prev"> <!--implementa la freccia "precedente" del carosello-->
@@ -98,7 +103,10 @@
                   <div class="card">  <!--crea il contorno-->
                       <div class="card-body"> <!--crea il corpo-->
                           <h5 class="card-title">Giorgio</h5>
-                          <p class="card-text">Piccola descrizione</p>
+                          <p class="card-text">23 anni</p>
+                          <p class="card-text">Studente di Informatica</p>
+                          <p class="card-text">Ho scelto di studiare informatica sin dalla scuola superiore scegliendo il tecnico informatico e grazie all'influenza di mio fratello (ing. informatico).</p>
+                          <p class="card-text">Competitivo e pronto a vincere ogni sfida, appassionato di basket!</p>
                           <a href=https://github.com/GiorgioMor> Link al profilo GitHub</a>
                       </div>
                   </div>
@@ -145,3 +153,10 @@
       <div id="footer"></div>
     </body>
 </html>
+<?php
+  }
+  else {
+    header("location: /frontend/index.php");
+    exit;
+  }
+?>
