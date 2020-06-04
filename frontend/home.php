@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>loaDay</title>
+    <title>loaDay - Home Page</title>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" type="text/css" href="style.css">
