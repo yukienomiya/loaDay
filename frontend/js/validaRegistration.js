@@ -24,7 +24,7 @@ function validaForm(){     //funzione che controlla se il form è stato compilat
     }
 
     if(document.formRegistration.inputPassword.value != document.formRegistration.inputPassword_2.value) {
-        alert("Le due password inserite non corrispondo");
+        alert("Le password inserite non corrispondo");
         return false;
     }
 
