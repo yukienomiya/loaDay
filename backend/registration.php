@@ -6,7 +6,7 @@
     }
 
     //CONNESSIONE AL DB
-    require_once('connection.php');
+    require('connection.php');
 
     //RACCOLTA DEI DATI INSERITI NELLA FORM
     $name=strtolower($_POST['inputName']);  //prende il nome appena inserito nella form

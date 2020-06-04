@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once('connection.php');
+    require('connection.php');
 
     // prendo le deadlines dell'utente dal db
     if(isset($_SESSION["email"]))
