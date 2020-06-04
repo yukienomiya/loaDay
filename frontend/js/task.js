@@ -1,3 +1,4 @@
+// salvo il task nel db
 function saveTask(e) {
   e.preventDefault();
   var taskDescription = $("#taskDescription").val();
@@ -10,6 +11,7 @@ function saveTask(e) {
     dataType: "html",
 
     success: function(response) {
+      // template nuovo task
       var newTask = `
       <div class="row task-content">
         <input type="text" name="taskID" value="${response}" hidden>
@@ -18,7 +20,7 @@ function saveTask(e) {
         <button class="btn task-delete-btn" onclick="deleteTask()"><i class="fa fa-times"></i></button>
       </div>
       `
-      // creo e aggiungo la nuova deadline alla sezione
+      // creo e aggiungo il nuovo task alla pagina (nella sezione giusta, in base alla categoria)
       var newT = document.createElement("li");
       newT.className = "list-group-item task";
       newT.innerHTML = newTask;
@@ -34,6 +36,7 @@ function saveTask(e) {
         taskList = document.getElementById("somedayTaskSection");
         $("#somedayTaskSection").prepend(newT);
       }
+      // controllo se nascondere il task vuoto ("Nessun task in programma")
       if (taskList.childElementCount == 2 && taskList.lastElementChild.id == "noTask") {
         $(taskList.lastElementChild).remove();
       }
@@ -42,6 +45,7 @@ function saveTask(e) {
       $("#addTaskForm").trigger("reset");
       $("#taskCategory").prop('selectedIndex', 0);
 
+      // aggiornamento progress bar
       $.ajax({
         url: "../backend/getTasks.php",
         type: "POST",
@@ -75,6 +79,7 @@ function deleteTask() {
       // elimina il task dalla pagina
       $(p.parentElement).remove();
       if (taskList.childElementCount == 0) {
+        // noTaskElement -> "Nessun task in programma", da mostrare quando la categoria di task è vuota
         var noTaskElement = document.createElement("LI");
         noTaskElement.className = "list-group-item task";
         noTaskElement.id = "noTask";
@@ -88,6 +93,7 @@ function deleteTask() {
         taskList.appendChild(noTaskElement)
       }
 
+      // aggiornamento progress bar
       $.ajax({
         url: "../backend/getTasks.php",
         type: "POST",
@@ -105,6 +111,7 @@ function deleteTask() {
   });
 }
 
+// salvo la scelta di check/uncheck un task
 function completeTask() {
   var taskCB = event.target;
   var completed = 0;
@@ -121,12 +128,13 @@ function completeTask() {
     type: "POST",
     data: "taskID=" + taskID + "&taskCompleted=" + completed,
     success: function () {
+      // classe per segnalare un task completato (testo grigio + line through)
       if (taskCB.checked) {
         taskText.classList.add("completedTask");
       } else {
         taskText.classList.remove("completedTask");
       }
-
+      // aggiornamento progress bar
       $.ajax({
         url: "../backend/getTasks.php",
         type: "POST",
@@ -142,8 +150,4 @@ function completeTask() {
       alert("Il completamento non è andato a buon fine. Ritenta!");
     }
   });
-}
-
-function refreshPBar() {
-  
 }

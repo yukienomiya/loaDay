@@ -1,9 +1,11 @@
-// funzione chiamata al click sul bottone addDeadline
+// funzione chiamata al click sul bottone addDeadline (submit di #newDeadlineForm)
 function saveDeadline(e) {
   //prendo i dati in input
   e.preventDefault();
   var deadlineDate = $("#deadlineDate").val();
+  // trasformo la data in input in una stringa convertibile in Date js
   var generalDate = changeDateFormat(deadlineDate);
+  // stringa rappresentante il countdown in questo momento
   var countdown = getCountdown(new Date(generalDate));
   var deadlineDescription = $("#deadlineDescription").val();
 
@@ -93,6 +95,7 @@ function updateCountdown() {
     var dlDate = new Date(el.children[3].value);
     var id = el.children[4].value;
     var currentDate = new Date();
+    // aggiorno il countdown solo se la data della deadline è maggiore della data corrente
     if (dlDate > currentDate) {
       var newCountdown = getCountdown(dlDate);
       el.children[0].textContent = newCountdown;
@@ -108,6 +111,7 @@ function resetDeadlineForm() {
   $("#newDeadlineForm").trigger("reset");
 }
 
+// prendo le deadlines dal db e le carico nella sezione appropriata
 function getDeadlines() {
   $.ajax({
     type: "POST",
@@ -121,6 +125,7 @@ function getDeadlines() {
         var countdown = getCountdown(new Date(changeDateFormat(date)));
         var description = k['descr'];
         var id = k['id'];
+        // template nuova deadline
         var newDeadline = `
         <!-- 0: countdown -->
         <div id="deadline-time" class="deadline-content deadline-time text-center text-justify">${countdown}</div>
