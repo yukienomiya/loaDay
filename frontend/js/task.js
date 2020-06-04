@@ -143,7 +143,3 @@ function completeTask() {
     }
   });
 }
-
-function refreshPBar() {
-  
-}

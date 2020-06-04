@@ -1,4 +1,6 @@
 <?php
+    //utilizzato in profile.php
+    //tramite questo script eseguo una query per prendere tutti i dati dello user loggato
     require('connection.php');
 
     $email = $_SESSION['email'];

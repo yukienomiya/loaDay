@@ -1,4 +1,5 @@
 <?php 
+//puoi accedere a questa pagina solo se ti sei prima loggato altrimenti verrai riportato alla pagina index.php
   session_start();
   if(isset($_SESSION['email']))
   {
@@ -17,8 +18,8 @@
 
         <script>
             $(function () {
-                $("#navbar").load("components/navbar.html");
-                $("#footer").load("components/footer.html");
+                $("#navbar").load("components/navbar.html"); //carico la navbar
+                $("#footer").load("components/footer.html"); //carico la footbar
             });
         </script>
     </head>
@@ -159,7 +160,7 @@
 <?php
   }
   else {
-    header("location: /frontend/index.php");
+    header("location: index.php"); //reindirizzamento alla pagina index.php
     exit;
   }
 ?>

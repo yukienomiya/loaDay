@@ -1,5 +1,6 @@
 
 ﻿<?php
+    //usato in registration.html
     //CONTROLLO SU COME SI E' ARRIVATI NELLA PAGINA
     if(!(isset($_POST['registrationButton']))){
         header("Location: ../frontend/index.php");
@@ -35,7 +36,7 @@
         }
     }
 
-    mysqli_close($conn);
+    mysqli_close($conn); //chiudo la connessione al DB
 
-    header("Location: ../frontend/index.php");
+    header("Location: ../frontend/index.php"); //Reindirizza alla pagina index.php
 ?>

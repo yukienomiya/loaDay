@@ -9,11 +9,10 @@
     <link href="style.css" rel="stylesheet">
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="js/index.js"></script>
+		<script src="js/index.js"></script> <!-- carico il file con le funzioni javascript/jquery -->
 	</head>
 	<body>
 	  
-		<!-- Full Page Intro -->
 		<div class="view index-bg">
 		  <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
         <div class="container d-flex">
@@ -96,7 +95,8 @@
         </div>
 		  </div>
 		</div>
-	  
+    
+    <!-- div nascosta -->
 		<main class="hidden-section-index">
 		  <div id="nascosta" class="container" style="display: none;">
         <section class="mt-5">

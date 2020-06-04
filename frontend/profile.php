@@ -1,4 +1,5 @@
 <?php 
+  //puoi accedere a questa pagina solo se ti sei prima loggato altrimenti verrai riportato alla pagina index.php
   session_start();
   if(isset($_SESSION['email']))
   {
@@ -16,13 +17,11 @@
         <link rel="stylesheet" type="text/css" href="main.css">
         <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="js/profile.js"></script>
+        <script src="js/profile.js"></script> <!-- carico il file con le funzioni javascript/jquery -->
         <script>
             $(function () {
-                $("#navbar").load("components/navbar.html");
-                $("#footer").load("components/footer.html");
+                $("#navbar").load("components/navbar.html"); //carico la navbar
+                $("#footer").load("components/footer.html"); //carico la footbar
             });
         </script>
 
@@ -31,7 +30,7 @@
     <body>
         <div id="navbar"></div>
 
-        <!-- Notifica per modifica profilo-->
+        <!-- Notifiche per modifica profilo-->
         <div id="successo" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
             <strong>Successo!</strong> Il tuo profilo è stato modificato correttamente.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -46,7 +45,7 @@
             </button>
         </div>
 
-        <!-- Notifica per modifica password-->
+        <!-- Notifiche per modifica password-->
         <div id="successoP" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
             <strong>Successo!</strong> La tua password è stata modificato correttamente.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -68,10 +67,9 @@
             </button>
         </div>
         
-        <!--CONTENITORE DELLA PAGINA-->
-        <div class="container container-fluid mt-6 margin-bottom-small col-10"> <!--crea un "contenitore" per la pagina-->
+        <div class="container container-fluid mt-6 margin-bottom-small col-10">
             <h2 class="mt-5 mb-5">Benvenuto, <?= strtoupper($row[2]) ?></h2>
-            <div class="container container-fluid mt-5 margin-bottom-small col-8"> <!--crea un "contenitore" per la pagina-->
+            <div class="container container-fluid mt-5 margin-bottom-small col-8">
                 <div class="row">
                     <div id="refresh" class="col-md-12">
                     <form id="valida" class="form-registration" method="POST" name="modifica" novalidate>
@@ -180,7 +178,7 @@
 <?php
   }
   else {
-    header("location: /frontend/index.php");
+    header("location: index.php"); //reindirizzamento alla pagina index.php
     exit;
   }
 ?>
