@@ -1,5 +1,5 @@
 <?php
-    require_once('connection.php');
+    require('connection.php');
 
     if(isset($_SESSION["email"]))
     {
