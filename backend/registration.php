@@ -35,5 +35,7 @@
         }
     }
 
+    mysqli_close($conn);
+
     header("Location: ../frontend/index.php");
 ?>
