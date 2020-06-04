@@ -105,8 +105,8 @@
                           <h5 class="card-title">Giorgio</h5>
                           <p class="card-text">23 anni</p>
                           <p class="card-text">Studente di Informatica</p>
-                          <p class="card-text">Ho scelto di studiare informatica sin dalla scuola superiore scegliendo il tecnico informatico e grazie all'influenza di mio fratello (ing. informatico).</p>
-                          <p class="card-text">Competitivo e pronto a vincere ogni sfida, appassionato di basket!</p>
+                          <p class="card-text">La tecnologia è l'ambito che da sempre mi appassiona, già dai primi anni del liceo la mia idea era quella di immergermi in questo mondo ed approfondirne la conoscenza.</p>
+                          <p class="card-text">Nel tempo libero mi dedico ad altre tre grandi passioni: il pianoforte, che suono sin da bambino, la vespa, un regalo ricevuto dal mio nonno meccanico e la birra artigianale.</p>
                           <a href=https://github.com/GiorgioMor> Link al profilo GitHub</a>
                       </div>
                   </div>
