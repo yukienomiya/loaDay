@@ -31,6 +31,7 @@
     <body>
         <div id="navbar"></div>
 
+        <!-- Notifica per modifica profilo-->
         <div id="successo" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
             <strong>Successo!</strong> Il tuo profilo è stato modificato correttamente.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -40,6 +41,28 @@
 
         <div id="errore" class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
             <strong>Errore!</strong> Si è verificato un errore imprevisto. Riprova più tardi.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <!-- Notifica per modifica password-->
+        <div id="successoP" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+            <strong>Successo!</strong> La tua password è stata modificato correttamente.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <div id="erroreP" class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
+            <strong>Errore!</strong> La tua password non è stata modificata. Riprova più tardi.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <div id="errPsw" class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
+            <strong>Attenzione!</strong> Hai sbagliato ad inserire la password attuale!
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -95,14 +118,54 @@
                                     <div class="col-md-6">
                                         <label>Genere</label>
                                         <div class="form-group form-check">
-                                            <input id="sesso" type="radio" name="genere" value="uomo" <?php if($row[4] == "uomo") {?> checked <?php } ?>> Uomo
-                                            <input id="sesso" type="radio" name="genere" value="donna"  <?php if($row[4] == "donna") {?> checked <?php } ?> class="ml-3" > Donna
+                                            <input type="radio" name="genere" value="uomo" <?php if($row[4] == "uomo") {?> checked <?php } ?>> Uomo
+                                            <input type="radio" name="genere" value="donna"  <?php if($row[4] == "donna") {?> checked <?php } ?> class="ml-3" > Donna
                                         </div>
                                     </div>
                                 </div>                                
                             </div>
                             <div class="card-footer text-right">
-                                <button id="invia" type="submit" class="btn btn-primary">SALVA</button>
+                                <button id="inviaProfilo" type="submit" class="btn btn-primary">SALVA</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form id="validaPass" class="form-registration" method="POST" name="modificaPass">
+                        <div class="card mt-4">
+                            <div class="card-header">
+                                <h4 class="card-title"><i class="now-ui-icons users_circle-08"></i> Cambia Password </h4>
+                            </div>                            
+                            <div class="card-body">                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Password attuale</label>
+                                        <div class="form-group">
+                                            <input id="vecchia" type="password" class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Nuova Password</label>
+                                        <div class="form-group">
+                                            <input id="nuova" type="password" class="form-control">
+                                            <div class="invalid-feedback">
+                                                Password non valida (min 8 caratteri, almeno 1 numero e almeno 1 carattere speciale)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Ripeti Password</label>
+                                        <div class="form-group">
+                                            <input id="nuovaVerifica" type="password" class="form-control">
+                                            <div class="invalid-feedback">
+                                                Non corrisponde
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                            
+                            </div>
+                            <div class="card-footer text-right">
+                                <button id="inviaPass" type="submit" class="btn btn-primary">SALVA</button>
                             </div>
                         </div>
                     </form>

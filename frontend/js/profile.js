@@ -15,7 +15,7 @@ $(document).ready(function(){
         var ddn = $('#ddn').val();
         var sesso = $('input[name=genere]:checked', '#valida').val();
         var errori = $('.invalid-feedback');
-        var login = $('#invia').val();
+        var login = $('#inviaProfilo').val();
 
         $(errori).hide();
         $('#successo').hide();
@@ -53,6 +53,67 @@ $(document).ready(function(){
 
             ajaxRequest.fail(function(){
                 $('#errore').show();
+            });
+        }
+    });
+
+
+    function isValidPassword(password) {
+        var pattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/; //min 8 caratteri, almeno 1 numero e almeno 1 carattere speciale
+        return pattern.test(password);
+    };
+
+    function check(psw1, psw2) {
+        return psw1 == psw2 ? true : false;
+    };
+
+    $('#validaPass').submit(function(event){
+        event.preventDefault();
+
+        var attuale = $('#vecchia').val();
+        var nuova = $('#nuova').val();
+        var verifica = $('#nuovaVerifica').val();
+        var errori = $('.invalid-feedback');
+        var login = $('#inviaPass').val();
+
+        $(errori).hide();
+        $('#successoP').hide();
+        $('#erroreP').hide();
+        $('#errPsw').show();
+
+        if(!isValidPassword(nuova)) $(errori[2]).show();
+        else if(!check(nuova, verifica)) $(errori[3]).show();
+        else
+        {
+            var ajaxRequest =$.ajax({
+                type:'POST',
+                url: "../backend/modPassword.php",
+                dataType: 'json',
+                data: { attuale: attuale, nuova: nuova, login: login }
+            });
+
+            ajaxRequest.done(function(data){
+                if (data.code == "200"){
+                    $('#validaPass').trigger('reset');
+                    $('#successoP').show();
+                    $('html,body').animate({
+                        scrollTop: $("#successoP").offset().top},
+                        'slow');
+                }
+                else {
+                    $('#validaPass').trigger('reset');
+                    $('#errPsw').show();
+                    $('html,body').animate({
+                        scrollTop: $("#errPsw").offset().top},
+                        'slow');
+                }
+            });
+
+            ajaxRequest.fail(function(){
+                $('#erroreP').show();
+                $('html,body').animate({
+                    scrollTop: $("#erroreP").offset().top},
+                    'slow');
             });
         }
     });
