@@ -45,7 +45,7 @@
     <div class="container content">
 
       <h2 id="date"></h2>
-      <div class="row">
+      <div id="refresh" class="row">
         <progress id="bar" value="<?= $percentuale ?>" max="100" class="col-lg-11 col-md-12"></progress>
         <h2 class="col-lg-1 d-none d-lg-block bar-text"><?= $percentuale ?>%</h2>
       </div>
