@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once('connection.php');
+    require('connection.php');
 
     // prendo i dati e elimino la deadline dal db
     if(isset($_POST["deadlineID"]))

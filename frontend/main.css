@@ -10926,8 +10926,17 @@ a.text-dark:hover, a.text-dark:focus {
   padding-top: calc(.375rem + 10px);
 }
 
+.text-secondary {
+  color: #595e63 !important;
+}
+
 a:not([href]) {
   color: #707070;
+}
+
+a:not([href]):hover {
+  color: #4B3588;
+  font-weight: 500;
   text-decoration: none;
 }
 /*# sourceMappingURL=main.css.map */

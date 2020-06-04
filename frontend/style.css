@@ -35,10 +35,6 @@
     filter: invert(1);
 }
 
-.listaAboutUs:hover {
-    color:  rgb(189, 140, 204);
-}
-
 .no-bullets {
     list-style-type: none;
 }
@@ -211,7 +207,7 @@ progress::-webkit-progress-value {
 }
 
 .bg-lilac {
-  background-color: rgb(189, 140, 204);
+  background-color: rgb(228, 104, 135);
   color: white;
 }
 
@@ -268,7 +264,7 @@ progress::-webkit-progress-value {
 }
 
 .index-bg {
-  background-color: #F5F5F5;
+  background-color: white;
 }
 
 .index-link {
@@ -277,20 +273,21 @@ progress::-webkit-progress-value {
 }
 
 .evidenzia {
-  background-color: rgb(72, 138, 224);
+  background-color: rgba(75, 53, 136, 0.541);
+  color: white;
 }
 
 .btn-accent {
-  background-color: rgb(0, 194, 136);
+  background-color: #4B3588;
   color: white;
 }
 
 .login-card-header {
-  background-color: #7D6C9E;
+  background-color: #00829B;
   color: white;
 }
 
-.vav {
-  background-color: rgb(228, 104, 135)
-  ;
+.hidden-section-index {
+  background-color: lightgray; 
+  padding-top: 1px; 
 }

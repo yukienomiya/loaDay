@@ -30,8 +30,8 @@
                 loaDay ti offre una piattaforma dove annotare i tuoi obiettivi giornalieri e le tue imminenti scadenze, in modo da aumentare la tua produttività.
                 Completa tutti i task che ti sei prefissato e riempi la barra di caricamento della giornata!
               </p>
-        
-              <a class="d-none d-md-inline index-link" id="mostraNascosta">Scopri di più</a>
+              
+              <button class="btn btn-outline-secondary btn-sm d-none d-md-inline index-link" id="mostraNascosta">Scopri di più</button>
         
             </div>
             <div class="col-md-6 col-xl-5 mb-4">
@@ -97,7 +97,7 @@
 		  </div>
 		</div>
 	  
-		<main>
+		<main class="hidden-section-index">
 		  <div id="nascosta" class="container" style="display: none;">
         <section class="mt-5">
           <div class="row">
@@ -148,7 +148,7 @@
 
             <div class="col-md-6 mb-4">
               <h3 class="h3 mb-3">Una sbirciatina alle funzionalità</h3>
-              <p>Se deciderai di <a href="registration.html">registrati</a> a loaDay, avrai accesso a queste pagine:</p>
+              <p>Se deciderai di <a href="registration.html"><strong>registrarti</strong></a> a loaDay, avrai accesso a queste pagine:</p>
               <p>Home, dove potrai annotare i tuoi task per oggi, domani o per il futuro. Inoltre, troverai anche la sezione Deadlines, dove inserire le scadenze importanti da ricordare.</p>
               <p>Profilo, dove potrai modificare i tuoi dati personali.</p>
               <p>About Us, dove scoprirai di più su chi ha creato loaDay.</p>

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once('connection.php');
+    require('connection.php');
 
     // prendo i dati e aggiorno l'attributo completato del task nel db
     if(isset($_POST["taskID"]))
