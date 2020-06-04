@@ -90,9 +90,16 @@ function updateCountdown() {
   //Prendo tutti i figli di deadlinesList e per ognuno aggiorno il countdown
   var dlList = Array.from(document.getElementById("deadlinesList").children);
   dlList.forEach(el => {
-    var dlDate = el.children[3].value;
-    var newCountdown = getCountdown(new Date(dlDate));
-    el.children[0].textContent = newCountdown;
+    var dlDate = new Date(el.children[3].value);
+    var id = el.children[4].value;
+    var currentDate = new Date();
+    if (dlDate > currentDate) {
+      var newCountdown = getCountdown(dlDate);
+      el.children[0].textContent = newCountdown;
+    }
+    else {
+      el.children[0].textContent = 'SCADUTO';
+    }
   });
 }
 

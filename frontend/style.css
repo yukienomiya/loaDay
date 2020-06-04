@@ -291,3 +291,13 @@ progress::-webkit-progress-value {
   background-color: lightgray; 
   padding-top: 1px; 
 }
+
+.profile-btn {
+  background-color: #4B3588;
+  border-color: #4B3588;
+}
+
+.profile-btn:hover {
+  background-color: rgb(52, 37, 95);
+  border-color: rgb(52, 37, 95);
+}

@@ -196,7 +196,7 @@
 <?php
   }
   else {
-    header("location: /frontend/index.php");
+    header("location: index.php");
     exit;
   }
 ?>
