@@ -2,7 +2,7 @@
     session_start();
     require_once('connection.php');
 
-    // prendo i dati e salvo la deadline nel db
+    // prendo i dati e elimino la deadline dal db
     if(isset($_POST["deadlineID"]))
     {
         $id = $_POST["deadlineID"];
