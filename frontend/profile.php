@@ -1,11 +1,13 @@
-<?php session_start();
-/*if(isset($_SESSION['email']))
-{*/
+<?php 
+  session_start();
+  if(isset($_SESSION['email']))
+  {
+    require('../backend/getInfo.php');
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>profile</title>   <!--titolo della pgina-->
+        <title>loaDay - Profilo</title>   <!--titolo della pgina-->
         <meta charset="utf-8"/> <!--imposto la codifica della pagina-->
         <meta name="viewport" content="width-device-width, initial-scale=1"/>   <!--faccio in modo che la visualizzazione della pagina si adatti ad ogni tipo di dispositivo-->
         
@@ -16,6 +18,7 @@
         <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="js/profile.js"></script>
         <script>
             $(function () {
                 $("#navbar").load("components/navbar.html");
@@ -27,114 +30,82 @@
 
     <body>
         <div id="navbar"></div>
+
+        <div id="successo" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+            <strong>Successo!</strong> Il tuo profilo è stato modificato correttamente.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <div id="errore" class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
+            <strong>Errore!</strong> Si è verificato un errore imprevisto. Riprova più tardi.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
         
         <!--CONTENITORE DELLA PAGINA-->
         <div class="container container-fluid mt-6 margin-bottom-small col-10"> <!--crea un "contenitore" per la pagina-->
-            <h1 class="mt-5 mb-5">Welcome utente_loggato</h1>
+            <h2 class="mt-5 mb-5">Benvenuto, <?= strtoupper($row[2]) ?></h2>
             <div class="container container-fluid mt-5 margin-bottom-small col-8"> <!--crea un "contenitore" per la pagina-->
-            <h3 class="text-center margin-top-small mt-5 mb-5">Informazioni personali</h3>
-
-            <!--Dati registrati-->
-            <div class="form-group row mt-5">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Nome:</label>
-                <div class="col-sm-10">
-                    <div class="card">
-                        <div class="card-body">
-                            <?php echo $_SESSION['name']?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group row mt-5">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Cognome:</label>
-                <div class="col-sm-10">
-                    <div class="card">
-                        <div class="card-body">
-                            <?php echo $_SESSION['surname']?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group row mt-5">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email:</label>
-                <div class="col-sm-10">
-                    <div class="card">
-                        <div class="card-body">
-                            <?php echo $_SESSION['email']?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="form-group row mt-5">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Password:</label>
-                <div class="col-sm-10">
-                    <div class="card">
-                        <div class="card-body">
-                            <?php echo $_SESSION['password']?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group row mt-5">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Data di nascita:</label>
-                <div class="col-sm-10">
-                    <div class="card">
-                        <div class="card-body">
-                            <?php echo $_SESSION['dataDiNascita']?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group row mt-5">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Genere:</label>
-                <div class="col-sm-10">
-                    <div class="card card-title">
-                        <div class="card-body">
-                            <?php echo $_SESSION['genere']?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-
-            <div class="text-center mb-5">
-                <button type="button" class="btn btn-secondary active center mt-5 margin-bottom-medium" data-toggle="modal" data-target="#modalForm">Change</button>
-            </div>
-        </div>
-        
-        <!--popUp_Form-->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="modal fade" role="dialog" id="modalForm">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Inserisci il nome</h4>
-                                <button class="close" type="button" data-dismiss="modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="form">
-                                <form id="formChangeData" action="../Backend/dataChange.php" class="form-registration mb-2" method="post" name="formChangeData" onSbmit="">    <!--crea un form per cambiare nome-->
-                                    <input type="text" name="inputName" class="form-control mb-2" placeholder="Nome"/>
-                                    <input type="text" name="inputSurname" class="form-control mb-2" placeholder="Cognome"/>
-                                    <input type="password" name="inputPassword" class="form-control mb-2" placeholder="Password"/>
-                                    <input type="date" name="inputDDN" class="input-group date">
-                                    <div class="form-check form-check-inline mt-3">  <!--crea due elementi di tipo radio per la selezione del genere-->
-                                        <input type="radio" name="genere" value="uomo">Uomo &nbsp;&nbsp;&nbsp;
-                                        <input type="radio" name="genere" value="donna">Donna
-                                    </div>
-                                        <div class="modal-footer mt-3">
-                                            <button class="btn btn-secondary active center" type="submit">Save</button>
+                <div class="row">
+                    <div id="refresh" class="col-md-12">
+                    <form id="valida" class="form-registration" method="POST" name="modifica" novalidate>
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title"><i class="now-ui-icons users_circle-08"></i> Informazioni personali </h4>
+                            </div>                            
+                            <div class="card-body">                                
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Email</label>
+                                        <div class="form-group">
+                                            <input type="text" value="<?= $row[0] ?>" class="form-control" disabled>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Nome</label>
+                                        <div class="form-group">
+                                            <input id="nome" type="text" value="<?= strtoupper($row[2]) ?>" class="form-control" required>
+                                            <div class="invalid-feedback">
+                                                Nome non valido
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Cognome</label>
+                                        <div class="form-group">
+                                            <input id="cogn" type="text" value="<?= strtoupper($row[3]) ?>" class="form-control" required>
+                                            <div class="invalid-feedback">
+                                                Cognome non valido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Data di Nascita</label>
+                                        <div class="form-group">
+                                            <input id="ddn" type="date" value="<?= $row[5] ?>" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Genere</label>
+                                        <div class="form-group form-check">
+                                            <input id="sesso" type="radio" name="genere" value="uomo" <?php if($row[4] == "uomo") {?> checked <?php } ?>> Uomo
+                                            <input id="sesso" type="radio" name="genere" value="donna"  <?php if($row[4] == "donna") {?> checked <?php } ?> class="ml-3" > Donna
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class="card-footer text-right">
+                                <button id="invia" type="submit" class="btn btn-primary">SALVA</button>
                             </div>
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -142,12 +113,11 @@
         <div id="footer"></div>
     </body>
 </html>
-<?PHP
-/*}
-else{
-    header('HTTP/1.1 401 Unauthorized');
-exit;}*/?>
 
-<!--
-
--->
+<?php
+  }
+  else {
+    header("location: /frontend/index.php");
+    exit;
+  }
+?>
