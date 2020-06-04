@@ -41,6 +41,17 @@ function saveTask(e) {
       // svuoto i campi input
       $("#addTaskForm").trigger("reset");
       $("#taskCategory").prop('selectedIndex', 0);
+
+      $.ajax({
+        url: "../backend/getTasks.php",
+        type: "POST",
+        success: function () {
+          $("#refresh").load(location.href+" #refresh>*","");
+        },
+        error: function () {
+          alert("Non sono riuscito ad aggiornare la progress-bar.");
+        }
+      });
     },
     error: function () {
       alert("Il salvataggio non è andato a buon fine. Ritenta!");
@@ -76,6 +87,17 @@ function deleteTask() {
         noTaskElement.innerHTML = content;
         taskList.appendChild(noTaskElement)
       }
+
+      $.ajax({
+        url: "../backend/getTasks.php",
+        type: "POST",
+        success: function () {
+          $("#refresh").load(location.href+" #refresh>*","");
+        },
+        error: function () {
+          alert("Non sono riuscito ad aggiornare la progress-bar.");
+        }
+      });
     },
     error: function () {
       alert("L'eliminazione non è andata a buon fine. Ritenta!");
