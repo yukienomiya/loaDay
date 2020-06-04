@@ -1,6 +1,7 @@
 <?php 
   //puoi accedere a questa pagina solo se ti sei prima loggato altrimenti verrai riportato alla pagina index.php
   session_start();
+  // se l'utente è registrato -> la sessione ha l'attributo email
   if(isset($_SESSION['email']))
   {
     // carica i task dell'utente
@@ -12,29 +13,39 @@
 <html>
   <head>
     <title>loaDay - Home Page</title>
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
     <script type="text/javascript" src="js/main.js"></script>  <!-- carico il file con le funzioni javascript/jquery -->
     <script type="text/javascript" src="js/deadline.js"></script>  <!-- carico il file con le funzioni javascript/jquery -->
     <script type="text/javascript" src="js/task.js"></script>  <!-- carico il file con le funzioni javascript/jquery -->
 
+    <!-- Jquery -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Countdown.js -->
     <script src="node_modules/countdown/countdown.js"></script>
+    <!-- Moment -->
     <script type="text/javascript" src="node_modules/moment/min/moment-with-locales.min.js"></script>
+    <!-- tempusdominus -->
     <script type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- tempusdominus-bootstrap -->
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+    <!-- font-awesome (icons) -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <script>
+      // carico le components
       $(function () {
         $("#navbar").load("components/navbar.html"); //carico la navbar
         $("#deadlines").load("components/deadlines.html"); //carico la sezione dei deadlines
         $("#footer").load("components/footer.html"); //carico la footbar
       });
 
+      // onsubmit bottone form addTask: salvo il task
       $(document).ready(function () {
         $("#addTaskForm").submit(function (e) {
           saveTask(e);
@@ -199,6 +210,7 @@
 
 <?php
   }
+  // se l'utente non è registrato, viene reindirizzato su index.php
   else {
     header("location: index.php"); //reindirizzamento alla pagina index.php
     exit;

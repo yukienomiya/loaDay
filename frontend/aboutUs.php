@@ -10,7 +10,7 @@
         <title>loaDay - About Us</title>   <!--titolo della pgina-->
         <meta charset="utf-8"/> <!--imposto la codifica della pagina-->
         <meta name="viewport" content="width-device-width, initial-scale=1"/>   <!--faccio in modo che la visualizzazione della pagina si adatti ad ogni tipo di dispositivo-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  <!--importo file jquery-->
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>  <!--importo file jquery-->
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> <!--importo file di bootstrap-->
         <link rel="stylesheet" type="text/css" href="main.css"> <!--importo file di bootstrap-->
         <link rel="stylesheet" type="text/css" href="style.css">  <!--importo il file personalizzato .css-->

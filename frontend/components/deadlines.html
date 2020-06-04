@@ -2,6 +2,7 @@
 <html>
   <head>
     <script>
+      // carico il datetimepicker -ovvero il calendario di input per l'aggiunta della data di deadline
       $(function() {
         $("#datetimepicker5").datetimepicker({
           locale: "it",
@@ -14,13 +15,14 @@
         updateCountdown();
       }, 1000); //Every 1000ms = 1sec
 
+      // aggiungo l'evento onclick dinamicamente per ogni deadline
       $("#deadlinesList").on("click", ".deadline", function(e) {
         var el = this;
         // se l'evento non e stato scatenato dal div principale (lo user ha cliccato su uno degli altri elementi contenuti nel div principale)
         if (event.target != this) {
           // se lo user ha cliccato sul bottone delete
           if (event.target.tagName == 'BUTTON') {
-            // eliminare la dl dal db
+            // eliminare la deadline dal db
             var dl = event.target.parentElement;
             var deadlineID = dl.lastElementChild.value;
             $.ajax({
@@ -43,7 +45,7 @@
         var dl_time = content[0];
         var dl_text = content[1];
         var delete_btn = content[2];
-        // toggle del div al click
+        // toggle del div al click (cliccando sul div viene mostrato il bottone delete)
         var displayTime = $(dl_time).css("display");
         if (displayTime == "block") {
           $(el).css({ "background-color": "rgb(228, 104, 135)" });
@@ -59,6 +61,7 @@
         }
       });
 
+      // onmouseleave la vista del bottone delete scompare (nel caso in cui il div fosse stato cliccato)
       $("#deadlinesList").on("mouseleave", ".deadline", function () {
         var el = event.target;
         var content = el.children;
@@ -69,9 +72,11 @@
       });
 
       $(document).ready(function () {
+        // al submit salvo la deadline
         $("#newDeadlineForm").submit(function(e) {
           saveDeadline(e);
         });
+        // ondocumentready prendo le deadline dal db e le carico sulla pagina
         getDeadlines();
       });
       
