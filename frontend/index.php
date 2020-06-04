@@ -148,7 +148,7 @@
 
             <div class="col-md-6 mb-4">
               <h3 class="h3 mb-3">Una sbirciatina alle funzionalità</h3>
-              <p>Se deciderai di <a href="/registration.html">registrati</a> a loaDay, avrai accesso a queste pagine:</p>
+              <p>Se deciderai di <a href="registration.html">registrati</a> a loaDay, avrai accesso a queste pagine:</p>
               <p>Home, dove potrai annotare i tuoi task per oggi, domani o per il futuro. Inoltre, troverai anche la sezione Deadlines, dove inserire le scadenze importanti da ricordare.</p>
               <p>Profilo, dove potrai modificare i tuoi dati personali.</p>
               <p>About Us, dove scoprirai di più su chi ha creato loaDay.</p>
