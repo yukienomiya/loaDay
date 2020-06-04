@@ -104,6 +104,17 @@ function completeTask() {
       } else {
         taskText.classList.remove("completedTask");
       }
+
+      $.ajax({
+        url: "../backend/getTasks.php",
+        type: "POST",
+        success: function () {
+          $("#refresh").load(location.href+" #refresh>*","");
+        },
+        error: function () {
+          alert("Non sono riuscito ad aggiornare la progress-bar.");
+        }
+      });
     },
     error: function () {
       alert("Il completamento non è andato a buon fine. Ritenta!");

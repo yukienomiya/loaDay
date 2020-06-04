@@ -37,4 +37,6 @@
     //cancello i tasks vecchi completati
     $sql = "DELETE FROM tasks WHERE completato = '1' and done_date <= '$ieri'";
     mysqli_query($conn, $sql);
+
+    mysqli_close($conn);
 ?>
