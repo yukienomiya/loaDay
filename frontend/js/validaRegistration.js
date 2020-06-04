@@ -19,7 +19,7 @@ function validaForm(){     //funzione che controlla se il form è stato compilat
     var pattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
     var password = document.formRegistration.inputPassword.value;
     if(!(pattern.test(password))) { //controlla che la password sia min 8 caratteri, almeno 1 numero e almeno 1 carattere speciale
-        alert("La password deve essere lunga almeno 8 caratteri, almeno 1 numero e almeno 1 carattere speciale");  //se non supera il controllo lancia un alert in cui spiega il motivo
+        alert("La password deve essere lunga almeno 8 caratteri, almeno 1 numero e almeno 1 carattere speciale (@$!%*#?&)");  //se non supera il controllo lancia un alert in cui spiega il motivo
         return false;
     }
 
