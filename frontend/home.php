@@ -1,4 +1,5 @@
 <?php 
+  //puoi accedere a questa pagina solo se ti sei prima loggato altrimenti verrai riportato alla pagina index.php
   session_start();
   // se l'utente è registrato -> la sessione ha l'attributo email
   if(isset($_SESSION['email']))
@@ -14,9 +15,10 @@
     <title>loaDay - Home Page</title>
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/deadline.js"></script>
-    <script type="text/javascript" src="js/task.js"></script>
+
+    <script type="text/javascript" src="js/main.js"></script>  <!-- carico il file con le funzioni javascript/jquery -->
+    <script type="text/javascript" src="js/deadline.js"></script>  <!-- carico il file con le funzioni javascript/jquery -->
+    <script type="text/javascript" src="js/task.js"></script>  <!-- carico il file con le funzioni javascript/jquery -->
 
     <!-- Jquery -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -38,9 +40,9 @@
     <script>
       // carico le components
       $(function () {
-        $("#navbar").load("components/navbar.html");
-        $("#deadlines").load("components/deadlines.html");
-        $("#footer").load("components/footer.html");
+        $("#navbar").load("components/navbar.html"); //carico la navbar
+        $("#deadlines").load("components/deadlines.html"); //carico la sezione dei deadlines
+        $("#footer").load("components/footer.html"); //carico la footbar
       });
 
       // onsubmit bottone form addTask: salvo il task
@@ -85,6 +87,7 @@
             <p class="bg-primary text-white section-title">OGGI</p>
             <ul class="list-group section-content" id="todayTaskSection">
               <?php
+                //scorro l'array todayTasks creato in getTasks.php e lo stampo
                 if(mysqli_num_rows($todayTasks))
                 {
                   while($row = mysqli_fetch_row($todayTasks))
@@ -103,7 +106,7 @@
               <?php 
                   }
                 }
-                if(!(mysqli_num_rows($todayTasks)))
+                if(!(mysqli_num_rows($todayTasks))) //se è vuoto stampo un li con scritto nessun task in programma
                 {
               ?>
                   <li id="noTask" class="list-group-item task">
@@ -121,6 +124,7 @@
             <p class="bg-secondary text-white section-title">DOMANI</p>
             <ul class="list-group section-content" id="tomorrowTaskSection">
               <?php
+                //scorro l'array tomorrowTasks creato in getTasks.php e lo stampo
                 if(mysqli_num_rows($tomorrowTasks))
                 {
                   while($row = mysqli_fetch_row($tomorrowTasks))
@@ -139,7 +143,7 @@
               <?php 
                   }
                 }
-                else 
+                else  //se è vuoto stampo un li con scritto nessun task in programma
                 { 
               ?>
                   <li id="noTask" class="list-group-item task">
@@ -157,6 +161,7 @@
             <p class="bg-grey text-white section-title">IN FUTURO</p>
             <ul class="list-group section-content" id="somedayTaskSection">
               <?php
+                //scorro l'array futureTasks creato in getTasks.php e lo stampo
                 if(mysqli_num_rows($futureTasks))
                 {
                   while($row = mysqli_fetch_row($futureTasks))
@@ -175,7 +180,7 @@
               <?php 
                   }
                 }
-                else
+                else //se è vuoto stampo un li con scritto nessun task in programma
                 { 
               ?>
                   <li id="noTask" class="list-group-item task">
@@ -207,7 +212,7 @@
   }
   // se l'utente non è registrato, viene reindirizzato su index.php
   else {
-    header("location: index.php");
+    header("location: index.php"); //reindirizzamento alla pagina index.php
     exit;
   }
 ?>

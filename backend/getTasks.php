@@ -1,4 +1,5 @@
 <?php
+    //questo script verrà eseguito al caricamento della pagina home.php e ha la funzione di prelevare tutti i task dell'utente loggato presenti nel database
     require('connection.php');
 
     $email = $_SESSION['email'];
@@ -6,7 +7,12 @@
     $oggi = date("Y-m-d");
     $ieri = date('Y-m-d',strtotime("-1 days"));
 
-    //inseriti in data odierna e categoria oggi
+    //tutti i task che devono posizionarsi nella categoria oggi:
+    //  - inseriti oggi, categoria oggi
+    //  - inseriti in passato, categoria oggi, non completati
+    //  - inseriti ieri, categoria domani
+    //  - inseriti in passato, categoria domani, non completati
+    //  - inseriti in passato, completati oggi (tranne quelli con categoria 'in futuro')
     $sql = "SELECT * FROM tasks WHERE
                                 (user_email = '$email' and category = 'oggi' and create_date = '$oggi')
                                 OR (user_email = '$email' and category = 'oggi' and create_date <= '$ieri' and completato = '0')
