@@ -125,7 +125,7 @@
                                 </div>                                
                             </div>
                             <div class="card-footer text-right">
-                                <button id="inviaProfilo" type="submit" class="btn btn-primary">SALVA</button>
+                                <button id="inviaProfilo" type="submit" class="btn btn-primary profile-btn">SALVA</button>
                             </div>
                         </div>
                     </form>
@@ -165,7 +165,7 @@
                                 </div>                            
                             </div>
                             <div class="card-footer text-right">
-                                <button id="inviaPass" type="submit" class="btn btn-primary">SALVA</button>
+                                <button id="inviaPass" type="submit" class="btn btn-primary profile-btn">SALVA</button>
                             </div>
                         </div>
                     </form>
