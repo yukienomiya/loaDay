@@ -9,41 +9,23 @@
         <link rel="stylesheet" type="text/css" href="main.css"> <!--importo file di bootstrap-->
         <link rel="stylesheet" type="text/css" href="style.css">  <!--importo il file personalizzato .css-->
         <script type="text/javascript" src="main.js"></script>  <!--importo classe javascript-->
+
+        <script>
+            $(function () {
+                $("#navbar").load("components/navbar.html");
+                $("#footer").load("components/footer.html");
+            });
+        </script>
     </head>
 
     <body>
-      <!--NAVBAR-->
-      <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="#">
-          <img src="../media/logo.png" class="d-inline-block align-top logo" width="110px" alt="">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
-          aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarsExample05">
-          <ul class="navbar-nav ml-auto">
-              <li>
-                  <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Profilo</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="aboutUs.html">About Us</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">logout</a>
-              </li>
-          </ul>
-      </div>
-      </nav>
+      <div id="navbar"></div>
       
       <!--CONTENITORE DELLA PAGINA-->
-      <div class="container container-fluid"> <!--<crea un "contenitore" per la pagina-->
+      <div class="container container-fluid content"> <!--<crea un "contenitore" per la pagina-->
 
         <!--CAROSELLO-->
-        <div id="carouselAboutUs" class="carousel container-position" data-ride="carousel"> <!--crea un contenitore per il carosello-->
+        <div id="carouselAboutUs" class="col-12 carousel container-position" data-ride="carousel"> <!--crea un contenitore per il carosello-->
           <div class="carousel-inner">
             <div class="carousel-item active" data-interval="700">  <!--setta l'intervallo di tempo tra un immagine e l'altra-->
               <img src="../media/anteprima_logo.JPG" class="d-block w-100">   <!--seleziona la prima immagine del carosello-->
@@ -160,5 +142,6 @@
           </div>
         </div>
       </div>
+      <div id="footer"></div>
     </body>
 </html>

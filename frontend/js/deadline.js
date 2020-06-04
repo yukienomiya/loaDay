@@ -114,7 +114,6 @@ function getDeadlines() {
         var countdown = getCountdown(new Date(changeDateFormat(date)));
         var description = k['descr'];
         var id = k['id'];
-
         var newDeadline = `
         <!-- 0: countdown -->
         <div id="deadline-time" class="deadline-content deadline-time text-center text-justify">${countdown}</div>

@@ -53,13 +53,13 @@ progress {
 progress::-webkit-progress-bar {
   border-style: solid;
   border-width: 1px;
-  border-color: rgba(82, 77, 242, 0.48);
+  border-color: #7CB4C4;
   background-color: rgb(255, 255, 255);
   border-radius: .9em;
 }
 progress::-webkit-progress-value {
   border-radius: .7em; 
-  background-color: rgba(82, 77, 242, 0.48);
+  background-color: #7CB4C4;
 }
 
 .bar-text {
@@ -108,8 +108,7 @@ progress::-webkit-progress-value {
 }
 
 .logo {
-  padding-left: 15px;
-  padding-top: 15px;
+  padding: 10px;
 }
 
 .bg-grey {
@@ -128,7 +127,7 @@ progress::-webkit-progress-value {
   display:flex;
   width: 250px;
   height: 60px;
-  border-color: rgb(189, 140, 204);
+  border-color: rgb(228, 104, 135);
   border-radius: 1.75em;
   border-style: solid;
   border-width: 1.5px;
@@ -139,20 +138,20 @@ progress::-webkit-progress-value {
   display:flex;
   width: 250px;
   height: 60px;
-  border-color: rgb(189, 140, 204);
+  border-color: rgb(228, 104, 135);
   border-radius: 1.75em;
   border-style: solid;
   border-width: 1.5px;
   margin-bottom: 20px;
-  background-color: rgb(189, 140, 204);
+  background-color: rgb(228, 104, 135);
   align-items: center;
   color: white;
   font-weight: 600;
 }
 
 .deadline-add:hover {
-  border-color: rgb(129, 96, 139);
-  background-color: rgb(129, 96, 139);
+  border-color: rgb(139, 61, 81);
+  background-color: rgb(139, 61, 81);
   color: white;
 }
 
@@ -203,7 +202,7 @@ progress::-webkit-progress-value {
 }
 
 .content {
-  margin-bottom: 200px;
+  margin-bottom: 250px;
   margin-top: 25px;
 }
 
@@ -289,4 +288,9 @@ progress::-webkit-progress-value {
 .login-card-header {
   background-color: #7D6C9E;
   color: white;
+}
+
+.vav {
+  background-color: rgb(228, 104, 135)
+  ;
 }
