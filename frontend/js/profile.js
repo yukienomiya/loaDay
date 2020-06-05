@@ -70,7 +70,8 @@ $(document).ready(function(){
 
     //funzione che compara due stringe per verificare se sono uguali
     function check(psw1, psw2) {
-        return psw1 == psw2 ? true : false;
+        if(psw1 != "")
+            return psw1 == psw2 ? true : false;
     };
 
     //funzione eseguita al momento del submit del form con id 'validaPass'
@@ -88,7 +89,7 @@ $(document).ready(function(){
         $(errori).hide();
         $('#successoP').hide();
         $('#erroreP').hide();
-        $('#errPsw').show();
+        $('#errPsw').hide();
 
         //controllo i valori inseriti dall'utente, se sbagliati faccio visualizzare gli errori corrispondenti
         if(!isValidPassword(nuova)) $(errori[2]).show();
