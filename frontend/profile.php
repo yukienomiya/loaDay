@@ -10,7 +10,7 @@
     <head>
         <title>loaDay - Profilo</title>   <!--titolo della pgina-->
         <meta charset="utf-8"/> <!--imposto la codifica della pagina-->
-        <meta name="viewport" content="width-device-width, initial-scale=1"/>   <!--faccio in modo che la visualizzazione della pagina si adatti ad ogni tipo di dispositivo-->
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>   <!--faccio in modo che la visualizzazione della pagina si adatti ad ogni tipo di dispositivo-->
         
         <!-- Bootstrap CSS -->
         <script src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -69,7 +69,7 @@
         
         <div class="container container-fluid mt-6 margin-bottom-small col-10">
             <h2 class="mt-5 mb-5">Benvenuto, <?= strtoupper($row[2]) ?></h2>
-            <div class="container container-fluid mt-5 margin-bottom-small col-8">
+            <div class="container container-fluid mt-5 margin-bottom-small col-lg-8">
                 <div class="row">
                     <div id="refresh" class="col-md-12">
                     <form id="valida" class="form-registration" method="POST" name="modifica" novalidate>
