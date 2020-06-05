@@ -147,7 +147,7 @@
                                         <div class="form-group">
                                             <input id="nuova" type="password" class="form-control">
                                             <div class="invalid-feedback">
-                                                Password non valida (min 8 caratteri, almeno 1 numero e almeno 1 carattere speciale)
+                                                Password non valida (min 8 caratteri, almeno 1 numero e almeno 1 carattere speciale (@$!%*#?&))
                                             </div>
                                         </div>
                                     </div>
