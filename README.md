@@ -1,6 +1,6 @@
 # loaDay
 
-loaDay is a not-so-simple todo list web app that shows your daily progress in the form of a big progress bar, shaming you into being productive.
+loaDay is a productivity web app that shows your daily progress in the form of a big progress bar, motivating you to get things done.
 loaDay also reminds you of your important deadlines by making anxiety-provoking countdowns for you. ♥️
 
 ## Sneak peak
